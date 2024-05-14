@@ -6,6 +6,9 @@ export default {
     home: 'Home',
     sublist: 'Sub List', 
     rules: 'Rules', 
-    register: 'Register'
+    register: 'Register', 
+    profile: 'Profile', 
+    settings: 'Settings', 
+    login: 'Login',
   },
 };

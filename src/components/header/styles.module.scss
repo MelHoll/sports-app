@@ -17,10 +17,14 @@
 
   .item {
     display: flex;
-    padding: 12px;
-    margin: 0px 5px;
+    padding: 12px 17px;
     color: styles.$main-font;
     text-decoration: none;
+    transition:  background-color 0.3s ease-in, border-bottom 0.3s, top 0.3s ease 0s;
+  }
+
+  .item:hover {
+    background-color: styles.$select-background;
   }
 
   .item:first-of-type {
@@ -31,7 +35,10 @@
     padding-bottom: 8px;
     background-color: styles.$select-background;
     border-bottom: 4px styles.$primary solid;
-    transition:  background-color 0.3s ease-in, border-bottom 0.3s, top 0.3s ease 0s;
+  }
+
+  .icon {
+    margin-right: 5px;
   }
 }
 
