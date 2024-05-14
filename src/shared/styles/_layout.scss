@@ -1,0 +1,26 @@
+$screen-mobile: 767px;
+$screen-tablet: 1024px;
+$screen-desktop-1280: 1280px;
+$screen-desktop-1440: 1440px;
+$screen-desktop-1920: 1920px;
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.marginCenter {
+  margin: 0 auto;
+}
+
+.fullHorizontalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
