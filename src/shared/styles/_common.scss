@@ -34,3 +34,9 @@ input[type=number] {
 .clickable {
   cursor: pointer;
 }
+
+.mainPanel {
+  background-color: colors.$main-background;
+  border: 1px solid colors.$main-border;
+  border-radius: 8px;
+}

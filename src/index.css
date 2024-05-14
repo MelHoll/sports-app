@@ -2,7 +2,13 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #7B7986;
+  background-color: #F2F2F2;
+}
+
+#page-wrapper {
+  min-height: 85vh;
+  margin: 20px;
+  padding: 20px;
 }
 
 /* :root {

@@ -3,6 +3,7 @@
 .container {
   width: 100%;
   background-color: styles.$main-background;
+  border-bottom: 1px solid styles.$main-border;
   display: flex;
   flex-direction: row;
   align-items: center;
