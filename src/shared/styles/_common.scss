@@ -39,4 +39,10 @@ input[type=number] {
   background-color: colors.$main-background;
   border: 1px solid colors.$main-border;
   border-radius: 8px;
+  padding: 10px;
+}
+
+.headerText {
+  font-size: 1.875em;
+  line-height: 38px;
 }

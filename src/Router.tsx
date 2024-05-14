@@ -3,7 +3,6 @@ import { strings } from './shared/localizations/strings';
 import { Home } from './pages';
 import { Header } from './components';
 import ConfirmMessage from './components/confirmMessage';
-import Panel from './components/panel';
 
 const { routeNames } = strings;
 
@@ -24,7 +23,7 @@ const AppRouter = () => {
         <Header />
         <Routes>
           {routes.map(({ path, Component }) => (
-            <Route path={path} key={path} element={<Panel id={'page-wrapper'}><Component /></Panel>} />
+            <Route path={path} key={path} element={<div id={'page-wrapper'}><Component /></div>} />
           ))}
         </Routes>
     </Router>

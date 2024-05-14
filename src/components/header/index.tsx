@@ -3,13 +3,16 @@
 import { NavLink } from 'react-router-dom';
 import classes from './styles.module.scss';
 import { strings } from '../../shared/localizations/strings';
-import Logo from '../../assets/react.svg?react';
+import Home from '../../assets/svg/home.svg?react';
+import Gear from '../../assets/svg/settings.svg?react';
+import User from '../../assets/svg/user-profile.svg?react';
+import { FC } from 'react';
 
 const NAVIGATION_ITEMS = [
   {
     name: strings.routeNames.home,
     path: '/',
-    Icon: Logo
+    Icon: Home
   } as NavItemProps,
   {
     name: strings.routeNames.rules,
@@ -38,12 +41,12 @@ const profileItems = isSignedIn ? [
   {
     name: strings.routeNames.profile,
     path: '/profile',
-    Icon: Logo
+    Icon: User
   } as NavItemProps,
   {
     name: strings.routeNames.settings,
     path: '/settings',
-    Icon: Logo
+    Icon: Gear
   } as NavItemProps,
 ] : [
   {
@@ -74,11 +77,11 @@ interface NavLinkListProps {
   iconSize?: number;
 }
 
-const NavLinkList = ({ 
+const NavLinkList: FC<NavLinkListProps> = ({ 
   items, 
   className, 
   iconSize = 18
-}: NavLinkListProps)  => {
+})  => {
   return <ul className={className}>
     {items.map(item => {
       const Icon = item.Icon;
@@ -88,7 +91,7 @@ const NavLinkList = ({
         key={item.path}
         title={item.name}
         >
-        {Icon ? <Icon className={classes.icon} height={iconSize} width={iconSize} /> : null}
+        {Icon ? <Icon className={classes.icon} fill={classes.iconColor} height={iconSize} width={iconSize} /> : null}
         <li>{item.name}</li>
       </NavLink>
  })}

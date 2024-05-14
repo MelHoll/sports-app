@@ -26,3 +26,12 @@ $main-background: $light-50;
 $select-background: $light-200;
 
 $main-border: $light-200;
+$icon: $dark-400;
+
+:export {
+    mainFontColor: $main-font;
+    mainBackgroundColor: $main-background;
+    selectBackgroundColor: $select-background;
+    mainBorderColor: $main-border;
+    iconColor: $icon;
+}

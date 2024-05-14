@@ -1,13 +1,16 @@
 import classes from "./styles.module.scss"; //TODO pull classes from common directly?
 
 interface PanelProps {
-    children: JSX.Element[] | JSX.Element;
+    children?: JSX.Element[] | JSX.Element;
+    header?: string;
+    className?: string;
 }
 
-export const Panel = ({children, ...props}: PanelProps) => {
+export const Panel = ({children, header, ...props}: PanelProps) => {
   return (
     <>
-      <div {...props} className={classes.mainPanel}>
+      <div className={`${classes.mainPanel} ${props.className}`}>
+        {header && <div className={classes.headerText}>{header}</div>}
         {children}
       </div>
     </>

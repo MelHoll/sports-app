@@ -13,7 +13,7 @@ export const ConfirmMessage = ({title, content, buttons}: ConfirmMessageProps) =
   return (
     <>
       <div className={classes.container}>
-        <div className={classes.title} title={title}>{title}</div>
+        <div className={classes.headerText} title={title}>{title}</div>
         <div className={classes.content} title={content}>{content}</div>
         {buttons && <div className={classes.buttonContainer} title={content}>
           {buttons.map(Button => <Button />)}

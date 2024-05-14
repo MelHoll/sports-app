@@ -1,3 +1,15 @@
+@use "../../shared/styles";
+
 .container {
    display: flex;
+   align-items: stretch;
+   height: 85vh; //TODO
+}
+
+.panel:first-child {
+   margin-right: 15px;
+}
+
+.panel {
+   flex-grow: 1;
 }
