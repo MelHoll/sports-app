@@ -1,12 +1,12 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import { NavLink } from 'react-router-dom';
-import classes from './styles.module.scss';
-import { strings } from '../../shared/localizations/strings';
-import Home from '../../assets/svg/home.svg?react';
-import Gear from '../../assets/svg/settings.svg?react';
-import User from '../../assets/svg/user-profile.svg?react';
 import { FC } from 'react';
+import { NavLink } from 'react-router-dom';
+import { strings } from 'src/shared/localizations/strings';
+import Home from 'assets/svg/home.svg?react';
+import Gear from 'assets/svg/settings.svg?react';
+import User from 'assets/svg/user-profile.svg?react';
+import classes from './styles.module.scss';
 
 const NAVIGATION_ITEMS = [
   {

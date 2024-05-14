@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { strings } from './shared/localizations/strings';
-import { Home } from './pages';
-import { Header } from './components';
-import ConfirmMessage from './components/confirmMessage';
+import { strings } from 'src/shared/localizations/strings';
+import { Home } from 'src/pages';
+import { Header } from 'components/index';
+import ConfirmMessage from 'components/confirmMessage';
 
 const { routeNames } = strings;
 

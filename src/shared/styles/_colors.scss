@@ -28,10 +28,24 @@ $select-background: $light-200;
 $main-border: $light-200;
 $icon: $dark-400;
 
+$primary-btn: $primary;
+$primary-btn-font: $light-50;
+
+$secondary-btn: $light-50;
+$secondary-btn-font: $primary-dark;
+$secondary-btn-border: $primary-light;
+
+$disabled-btn: $light-100;
+$disabled-btn-font: $light-300;
+$disabled-btn-border: $light-300;
+
 :export {
     mainFontColor: $main-font;
     mainBackgroundColor: $main-background;
     selectBackgroundColor: $select-background;
     mainBorderColor: $main-border;
     iconColor: $icon;
+    primaryBtnFontColor: $primary-btn-font;
+    secondaryBtnFontColor: $secondary-btn-font;
+    disabledBtnFontColor: $disabled-btn-font;
 }

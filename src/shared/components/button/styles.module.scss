@@ -1,0 +1,35 @@
+@use "styles";
+
+.button {
+  height: 34px;
+  min-width: 120px;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 0 20px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.buttonLabel {
+  margin: 0px 5px;
+}
+
+.primary {
+  background-color: styles.$primary-btn;
+  color: styles.$primary-btn-font
+}
+
+.secondary {
+  background-color: styles.$secondary-btn;
+  color: styles.$secondary-btn-font;
+  border: 1px solid styles.$secondary-btn-border;
+}
+
+.disabled {
+  background-color: styles.$disabled-btn;
+  color: styles.$disabled-btn-font;
+  border: 1px solid styles.$disabled-btn-border;
+}
