@@ -22,7 +22,8 @@ $dark-600: #2F2C3A;
 $dark-700: #16141F;
 
 $main-font: $dark-700;
-$main-background: $light-50;
+$main-background: $light-100;
+$main-panel-background: $light-50;
 $select-background: $light-200;
 
 $main-border: $light-200;
@@ -30,18 +31,30 @@ $icon: $dark-400;
 
 $primary-btn: $primary;
 $primary-btn-font: $light-50;
+$primary-btn-hover: $primary-dark;
 
 $secondary-btn: $light-50;
 $secondary-btn-font: $primary-dark;
+$secondary-btn-hover: $primary-extra-light;
 $secondary-btn-border: $primary-light;
 
 $disabled-btn: $light-100;
 $disabled-btn-font: $light-300;
 $disabled-btn-border: $light-300;
 
+$dark-theme: false; //TODO
+
+@if $dark-theme {
+    $main-font: $light-50;
+    $main-background: $dark-700;
+    $main-panel-background: $dark-600;
+    $select-background: $dark-500;
+    $main-border: $dark-400;
+}
+
 :export {
     mainFontColor: $main-font;
-    mainBackgroundColor: $main-background;
+    mainBackgroundColor: $main-panel-background;
     selectBackgroundColor: $select-background;
     mainBorderColor: $main-border;
     iconColor: $icon;

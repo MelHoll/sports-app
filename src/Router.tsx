@@ -3,6 +3,7 @@ import { strings } from 'src/shared/localizations/strings';
 import { Home } from 'src/pages';
 import { Header } from 'components/index';
 import ConfirmMessage from 'components/confirmMessage';
+import classes from 'styles/_common.module.scss';
 
 const { routeNames } = strings;
 
@@ -23,7 +24,14 @@ const AppRouter = () => {
         <Header />
         <Routes>
           {routes.map(({ path, Component }) => (
-            <Route path={path} key={path} element={<div id={'page-wrapper'}><Component /></div>} />
+            <Route 
+            path={path} 
+            key={path} 
+            element={<div className={classes.pageWrapper}>
+                <div className={classes.page}>
+                  <Component />
+                </div>
+              </div>} />
           ))}
         </Routes>
     </Router>

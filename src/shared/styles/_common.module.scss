@@ -19,6 +19,25 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: colors.$main-background;
+  color: colors.$main-font;
+}
+
+.pageWrapper {
+  min-height: 85vh;
+  margin-top: 20px;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  .page {
+    margin: 20px;
+  }
+}
+
 .noPointerEvents {
   pointer-events: none;
 }
@@ -36,7 +55,7 @@ input[type=number] {
 }
 
 .mainPanel {
-  background-color: colors.$main-background;
+  background-color: colors.$main-panel-background;
   border: 1px solid colors.$main-border;
   border-radius: 8px;
   padding: 10px;

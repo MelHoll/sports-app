@@ -61,7 +61,8 @@ const profileItems = isSignedIn ? [
 
   return (
     <>
-      <nav className={classes.container}>
+      <nav className={classes.containerWrapper}>
+        <div className={classes.container}>
         <NavLinkList 
           items={NAVIGATION_ITEMS} 
           className={classes.list}
@@ -70,6 +71,7 @@ const profileItems = isSignedIn ? [
           items={profileItems} 
           className={classes.list}
           />
+          </div>
       </nav>
     </>
   );

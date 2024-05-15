@@ -13,6 +13,7 @@ $button-height: 34px;
   cursor: pointer;
   border: none;
   font-family: 'Open Sans', sans-serif;
+  transition:  background-color 0.2s ease-in;
 }
 
 .iconOnly {
@@ -27,17 +28,24 @@ $button-height: 34px;
 
 .primary {
   background-color: styles.$primary-btn;
-  color: styles.$primary-btn-font
+  color: styles.$primary-btn-font;
+  &:hover{
+    background-color: styles.$primary-btn-hover;
+  }
 }
 
 .secondary {
   background-color: styles.$secondary-btn;
   color: styles.$secondary-btn-font;
   border: 1px solid styles.$secondary-btn-border;
+  &:hover{
+    background-color: styles.$secondary-btn-hover;
+  }
 }
 
 .disabled {
   background-color: styles.$disabled-btn;
   color: styles.$disabled-btn-font;
   border: 1px solid styles.$disabled-btn-border;
+  cursor: default;
 }

@@ -1,13 +1,18 @@
 @use "styles";
 
+.containerWrapper {
+  background-color: styles.$main-panel-background;
+  border-bottom: 1px solid styles.$main-border;
+}
+
 .container {
   width: 100%;
-  background-color: styles.$main-background;
-  border-bottom: 1px solid styles.$main-border;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;    
+  max-width: 1260px;
+  margin: auto;
 }
 
 .list {
@@ -22,7 +27,7 @@
     padding: 12px 17px;
     color: styles.$main-font;
     text-decoration: none;
-    transition:  background-color 0.3s ease-in, border-bottom 0.3s, top 0.3s ease 0s;
+    transition:  background-color 0.2s ease-in, border-bottom 0.2s, top 0.3s ease 0s;
   }
 
   .item:hover {

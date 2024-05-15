@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Header } from 'src/shared/components';
 import { withRouter } from 'storybook-addon-remix-react-router';
-import 'src/App.css'
+import 'src/index.css'
 
 const meta = {
   title: 'Example/Header',
