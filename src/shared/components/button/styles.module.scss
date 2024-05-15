@@ -1,9 +1,11 @@
 @use "styles";
 
+$button-height: 34px;
+
 .button {
-  height: 34px;
+  height: $button-height;
   min-width: 120px;
-  border-radius: 8px;
+  border-radius: 4px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -11,6 +13,12 @@
   cursor: pointer;
   border: none;
   font-family: 'Open Sans', sans-serif;
+}
+
+.iconOnly {
+  min-width: unset;
+  padding: 0;
+  width: $button-height;
 }
 
 .buttonLabel {

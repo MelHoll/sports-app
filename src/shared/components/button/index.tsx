@@ -33,11 +33,11 @@ export const Button: FC<ButtonProps> = ({
     <button
       {...buttonProps}
       onClick={disabled ? undefined : onClick}
-      className={`${className} ${classes.button} ${classes[buttonClass]}`}
+      className={`${className} ${classes.button} ${classes[buttonClass]} ${label ? '' : classes.iconOnly}`}
       title={label}
     >
       {LeftIcon && <LeftIcon height={iconSize} width={iconSize} fill={buttonFontColor}/>}
-      <span className={classes.buttonLabel}>{label} </span>
+      {label && <span className={classes.buttonLabel}>{label} </span>}
       {children}
       {RightIcon && <RightIcon height={iconSize} width={iconSize} fill={buttonFontColor}/>}
     </button>

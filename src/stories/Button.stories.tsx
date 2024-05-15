@@ -71,3 +71,9 @@ export const IconLeftDisabled: Story = {
     disabled: true
   },
 };
+
+export const IconLeftOnly: Story = {
+  args: {
+    LeftIcon: Gear,
+  },
+};
