@@ -20,3 +20,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
+export const SignedIn: Story = {
+  args: {
+    isSignedIn: true,
+  }
+};

@@ -34,8 +34,11 @@ interface NavItemProps {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
 }
 
-export const Header = () => {
-  const isSignedIn = true;
+interface HeaderProps {
+  isSignedIn?: boolean
+}
+
+export const Header: FC<HeaderProps> = ({isSignedIn = false}) => {
 
 const profileItems = isSignedIn ? [
   {
@@ -52,6 +55,7 @@ const profileItems = isSignedIn ? [
   {
     name: strings.routeNames.login,
     path: '/login',
+    Icon: User
   } as NavItemProps
 ];
 
