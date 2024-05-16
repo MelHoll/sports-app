@@ -15,6 +15,10 @@ const NAVIGATION_ITEMS = [
     Icon: Home
   } as NavItemProps,
   {
+    name: strings.routeNames.leagues,
+    path: '/leagues',
+  } as NavItemProps,
+  {
     name: strings.routeNames.rules,
     path: '/rules',
   } as NavItemProps,

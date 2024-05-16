@@ -1,0 +1,17 @@
+@use "styles";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #16141f;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+}

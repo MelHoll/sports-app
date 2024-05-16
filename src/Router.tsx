@@ -15,6 +15,8 @@ export interface RouteType {
 
 const routes: RouteType[] = [
   { path: '/', name: routeNames.home, Component: Home },
+  { path: '/leagues', name: routeNames.leagues, Component: Home },
+  { path: '/leagues/:id', name: routeNames.leagues,  Component: Home},
   { path: '*', Component: () => <ConfirmMessage title={'No Page Found'} content={'This page does not exist.'}/> },
 ];
 

@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Home } from 'src/pages';
+import { withRouter } from 'storybook-addon-remix-react-router';
 
 const meta = {
   title: 'Example/Home',
   component: Home,
+  decorators: [withRouter],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',

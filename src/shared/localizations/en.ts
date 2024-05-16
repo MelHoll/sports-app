@@ -4,6 +4,7 @@ export default {
   },
   routeNames: {
     home: 'Home',
+    leagues: 'Leagues',
     sublist: 'Sub List', 
     rules: 'Rules', 
     register: 'Register', 

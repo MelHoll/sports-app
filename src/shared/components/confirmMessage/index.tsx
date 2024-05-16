@@ -1,5 +1,3 @@
-/// <reference types="vite-plugin-svgr/client" />
-
 import classes from './styles.module.scss';
 
 
@@ -15,7 +13,7 @@ export const ConfirmMessage = ({title, content, buttons}: ConfirmMessageProps) =
       <div className={classes.container}>
         <div className={classes.headerText} title={title}>{title}</div>
         <div className={classes.content} title={content}>{content}</div>
-        {buttons && <div className={classes.buttonContainer} title={content}>
+        {buttons && <div className={classes.buttonContainer}>
           {buttons.map(Button => <Button />)}
         </div>}
       </div>
@@ -23,6 +21,6 @@ export const ConfirmMessage = ({title, content, buttons}: ConfirmMessageProps) =
   );
 };
 
-ConfirmMessage.displayName = 'Header';
+ConfirmMessage.displayName = 'ConfirmMessage';
 
 export default ConfirmMessage;
