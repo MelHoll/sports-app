@@ -1,6 +1,8 @@
 export default {
   common: {
     ok: 'Ok',
+    changeTheme: 'Change theme', 
+    
   },
   routeNames: {
     home: 'Home',

@@ -59,7 +59,7 @@ $themes: (
   )
 );
 
-@each $theme-name, $properties in $themes {
+@each $theme-name, $properties in $themes { //TODO fix so we aren't generating multiple duplicate css blocks 
     body[data-theme="#{$theme-name}"] {
         // define a css variable for each property
         @each $name, $property in $properties {

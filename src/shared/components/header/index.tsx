@@ -1,11 +1,13 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { strings } from 'src/shared/localizations/strings';
 import Home from 'assets/svg/home.svg?react';
 import Gear from 'assets/svg/settings.svg?react';
 import User from 'assets/svg/user-profile.svg?react';
+import Sun from 'assets/svg/sun.svg?react';
+import Moon from 'assets/svg/moon.svg?react';
 import classes from './styles.module.scss';
 
 const NAVIGATION_ITEMS = [
@@ -43,6 +45,7 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({isSignedIn = false}) => {
+  const [theme, setTheme] = useState(document.body.dataset['theme']);
 
 const profileItems = isSignedIn ? [
   {
@@ -63,23 +66,38 @@ const profileItems = isSignedIn ? [
   } as NavItemProps
 ];
 
-  return (
-    <>
-      <nav className={classes.containerWrapper}>
-        <div className={classes.container}>
-        <NavLinkList 
-          items={NAVIGATION_ITEMS} 
-          className={classes.list}
-          />
+const changeTheme = () => {
+  const updatedTheme = theme == 'dark'? 'light': 'dark';
+  document.body.dataset['theme'] = updatedTheme
+  setTheme(updatedTheme);
+}
+
+return (
+  <>
+    <nav className={classes.containerWrapper}>
+      <div className={classes.container}>
+      <NavLinkList 
+        items={NAVIGATION_ITEMS} 
+        className={classes.list}
+        />
+        <div className={classes.rightContainer}>
           <NavLinkList 
-          items={profileItems} 
-          className={classes.list}
-          />
-          </div>
-      </nav>
-    </>
-  );
-};
+            items={profileItems} 
+            className={classes.list}
+            />
+          <a 
+            className={`${classes.clickable} ${classes.theme}`} 
+            title={strings.common.changeTheme}
+            onClick={changeTheme}>
+            { theme == 'dark' ? 
+              <Sun fill={classes.iconColor} height={20} width={20}/> : 
+              <Moon fill={classes.iconColor} height={20} width={20}/>}
+          </a>
+        </div>
+      </div>
+    </nav>
+  </>
+);};
 
 interface NavLinkListProps {
   items: NavItemProps[];

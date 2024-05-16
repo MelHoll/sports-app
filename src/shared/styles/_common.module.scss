@@ -1,6 +1,3 @@
-@use './colors';
-@use './mixins';
-
 $border-radius: 8px;
 $max-screen-width: 1260px;
 $default-padding: 10px;
@@ -37,7 +34,7 @@ body {
   max-width: $max-screen-width;
   margin-left: auto;
   margin-right: auto;
-  
+
   .page {
     margin: 20px;
   }

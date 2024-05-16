@@ -74,8 +74,7 @@ export const Filter: FC<FilterProps> = ({
       secondary={filters == undefined || getConveredtFilter(filters) == undefined}
       LeftIcon={Slider} 
       onClick={() => {
-        console.log('filters', filters, 'visible', filtersVisible)
-        setFiltersVisible(!filtersVisible)
+        setFiltersVisible(!filtersVisible);
       }}
     />
     { filtersVisible && filters && <div className={classes.mainPanel}>
