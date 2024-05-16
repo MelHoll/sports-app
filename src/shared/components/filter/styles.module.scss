@@ -1,3 +1,11 @@
 @use "styles";
 
-//TODO
+.container {
+    position: relative;
+}
+
+.popup {
+    position: absolute;
+    min-width: 150px;
+    box-shadow: 0px 3px 10px styles.$dark-700;
+}

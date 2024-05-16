@@ -9,7 +9,7 @@ interface FilterProps {
   label?: string;
   onChange?: (options: FilterOption[] | undefined) => void;
   onSubmit?: (options: FilterOption[] | undefined) => void;
-  showFilterButton: boolean;
+  showFilterButton?: boolean;
 }
 
 export interface FilterOption {
@@ -69,7 +69,7 @@ export const Filter: FC<FilterProps> = ({
   }
   
   return (
-    <>
+    <div className={classes.container}>
     <Button 
       secondary={filters == undefined || getConveredtFilter(filters) == undefined}
       LeftIcon={Slider} 
@@ -77,7 +77,7 @@ export const Filter: FC<FilterProps> = ({
         setFiltersVisible(!filtersVisible);
       }}
     />
-    { filtersVisible && filters && <div className={classes.mainPanel}>
+    { filtersVisible && filters && <div className={`${classes.mainPanel} ${classes.popup}`}>
       <div title={label}>{label}</div>
       {options.map((option) => {
         const selectedFilter = filters[option.propertyKey as keyof typeof filters];
@@ -109,7 +109,7 @@ export const Filter: FC<FilterProps> = ({
         }}/>}
     </div>
     }
-    </>
+    </div>
   );
 };
 

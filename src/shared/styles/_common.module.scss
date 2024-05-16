@@ -40,6 +40,11 @@ body {
   }
 }
 
+.flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
 .noPointerEvents {
   pointer-events: none;
 }

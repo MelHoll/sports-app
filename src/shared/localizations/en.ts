@@ -2,7 +2,7 @@ export default {
   common: {
     ok: 'Ok',
     changeTheme: 'Change theme', 
-    
+
   },
   routeNames: {
     home: 'Home',
@@ -14,4 +14,8 @@ export default {
     settings: 'Settings', 
     login: 'Login',
   },
+  league: {
+    activeLeagues: 'Active Leagues',
+    upcomingGames: 'Upcoming Games',
+  }
 };
