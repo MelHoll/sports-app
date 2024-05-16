@@ -1,14 +1,15 @@
 import { FC, useEffect, useState } from 'react';
-// import classes from './styles.module.scss'; TODO
+import classes from './styles.module.scss';
 import Button from 'components/button';
 import Slider from 'assets/svg/slider.svg?react';
 
 
 interface FilterProps {
+  options: FilterOption[];
   label?: string;
   onChange?: (options: FilterOption[] | undefined) => void;
   onSubmit?: (options: FilterOption[] | undefined) => void;
-  options: FilterOption[];
+  showFilterButton: boolean;
 }
 
 export interface FilterOption {
@@ -17,7 +18,13 @@ export interface FilterOption {
   values: string[];
 }
 
-export const Filter: FC<FilterProps> = ({label, onChange, onSubmit, options}) => {
+export const Filter: FC<FilterProps> = ({
+  options, 
+  label, 
+  onChange, 
+  onSubmit, 
+  showFilterButton = false
+}) => {
   const [filtersVisible, setFiltersVisible] = useState(false);
   const [filters, setFilters] = useState<{ [id: string] : string[]; }>();
 
@@ -63,13 +70,15 @@ export const Filter: FC<FilterProps> = ({label, onChange, onSubmit, options}) =>
   
   return (
     <>
-    <Button LeftIcon={Slider} 
-    onClick={() => {
+    <Button 
+      secondary={filters == undefined || getConveredtFilter(filters) == undefined}
+      LeftIcon={Slider} 
+      onClick={() => {
         console.log('filters', filters, 'visible', filtersVisible)
         setFiltersVisible(!filtersVisible)
       }}
     />
-    { filtersVisible && filters && <div>
+    { filtersVisible && filters && <div className={classes.mainPanel}>
       <div title={label}>{label}</div>
       {options.map((option) => {
         const selectedFilter = filters[option.propertyKey as keyof typeof filters];
@@ -93,12 +102,12 @@ export const Filter: FC<FilterProps> = ({label, onChange, onSubmit, options}) =>
         </div>
         );
       })}
-      <Button 
+      {showFilterButton && <Button 
         label='Filter' 
         onClick={() => {
           setFiltersVisible(false);
           onSubmit?.(getConveredtFilter(filters))
-        }}/>
+        }}/>}
     </div>
     }
     </>
