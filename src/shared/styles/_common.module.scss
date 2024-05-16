@@ -1,6 +1,10 @@
 @use './colors';
 @use './mixins';
 
+$border-radius: 8px;
+$max-screen-width: 1260px;
+$default-padding: 10px;
+
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px rgba(42, 44, 46, 1) inset !important;
   -webkit-text-fill-color: white !important;
@@ -23,16 +27,17 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: colors.$main-background;
-  color: colors.$main-font;
+  background-color: var(--background);
+  color: var(--font);
 }
 
 .pageWrapper {
   min-height: 85vh;
   margin-top: 20px;
-  max-width: 1260px;
+  max-width: $max-screen-width;
   margin-left: auto;
   margin-right: auto;
+  
   .page {
     margin: 20px;
   }
@@ -55,10 +60,10 @@ body {
 }
 
 .mainPanel {
-  background-color: colors.$main-panel-background;
-  border: 1px solid colors.$main-border;
-  border-radius: 8px;
-  padding: 10px;
+  background-color: var(--panelBackground);
+  border: 1px solid var(--border);
+  border-radius: $border-radius;
+  padding: $default-padding;
 }
 
 .headerText {

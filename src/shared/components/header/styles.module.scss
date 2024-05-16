@@ -1,8 +1,8 @@
 @use "styles";
 
 .containerWrapper {
-  background-color: styles.$main-panel-background;
-  border-bottom: 1px solid styles.$main-border;
+  background-color: var(--panelBackground);
+  border-bottom: 1px solid var(--border);
 }
 
 .container {
@@ -25,13 +25,13 @@
     font-size: 0.8750em;
     display: flex;
     padding: 12px 17px;
-    color: styles.$main-font;
+    color: var(--font);
     text-decoration: none;
     transition:  background-color 0.2s ease-in, border-bottom 0.2s, top 0.3s ease 0s;
   }
 
   .item:hover {
-    background-color: styles.$select-background;
+    background-color: var(--selectBackground);
   }
 
   .item:first-of-type {
@@ -40,7 +40,7 @@
 
   .active {
     padding-bottom: 8px;
-    background-color: styles.$select-background;
+    background-color: var(--selectBackground);
     border-bottom: 4px styles.$primary solid;
     font-weight: bold;
   }

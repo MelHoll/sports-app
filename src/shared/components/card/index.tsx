@@ -10,7 +10,7 @@ interface CardProps {
 export const Card: FC<CardProps> = ({title, subtitle, buttons}) => {
   return (
     <>
-      <div className={classes.container}>
+      <div className={`${classes.container} ${classes.mainPanel}`}>
         <div className={classes.textContainer}>
           <div className={classes.headerText} title={title}>{title}</div>
           <div className={classes.content} title={subtitle}>{subtitle}</div>

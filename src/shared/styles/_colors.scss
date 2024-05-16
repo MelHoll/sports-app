@@ -42,21 +42,37 @@ $disabled-btn: $light-100;
 $disabled-btn-font: $light-300;
 $disabled-btn-border: $light-300;
 
-$dark-theme: false; //TODO
+$themes: (
+  "light": (
+    "font": $dark-700,
+    "background": $light-100,
+    "panelBackground": $light-50,
+    "selectBackground": $light-200,
+    "border": $light-200,
+  ),
+  "dark": (
+    "font": $light-50,
+    "background": $dark-700,
+    "panelBackground": $dark-600,
+    "selectBackground": $dark-500,
+    "border": $dark-400
+  )
+);
 
-@if $dark-theme {
-    $main-font: $light-50;
-    $main-background: $dark-700;
-    $main-panel-background: $dark-600;
-    $select-background: $dark-500;
-    $main-border: $dark-400;
+@each $theme-name, $properties in $themes {
+    body[data-theme="#{$theme-name}"] {
+        // define a css variable for each property
+        @each $name, $property in $properties {
+            --#{$name}: #{$property};
+        }
+    }
 }
 
 :export {
-    mainFontColor: $main-font;
-    mainBackgroundColor: $main-panel-background;
-    selectBackgroundColor: $select-background;
-    mainBorderColor: $main-border;
+    mainFontColor: var(font);
+    mainBackgroundColor: var(--panelBackground);
+    selectBackgroundColor: var(--selectBackground);
+    mainBorderColor: var(--border);
     iconColor: $icon;
     primaryBtnFontColor: $primary-btn-font;
     secondaryBtnFontColor: $secondary-btn-font;
