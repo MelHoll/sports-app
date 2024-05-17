@@ -4,6 +4,8 @@ import { Home } from 'src/pages';
 import { Header } from 'components/index';
 import ConfirmMessage from 'components/confirmMessage';
 import classes from 'styles/_common.module.scss';
+import LeaguesPanel from './shared/components/panel/league-panel';
+import LeagueDetails from 'src/pages/leagueDetails';
 
 const { routeNames } = strings;
 
@@ -15,8 +17,8 @@ export interface RouteType {
 
 const routes: RouteType[] = [
   { path: '/', name: routeNames.home, Component: Home },
-  { path: '/leagues', name: routeNames.leagues, Component: Home },
-  { path: '/leagues/:id', name: routeNames.leagues,  Component: Home},
+  { path: '/leagues', name: routeNames.leagues, Component: () => <LeaguesPanel /> },
+  { path: '/leagues/:leagueId', name: routeNames.leagues,  Component: LeagueDetails},
   { path: '*', Component: () => <ConfirmMessage title={'No Page Found'} content={'This page does not exist.'}/> },
 ];
 
