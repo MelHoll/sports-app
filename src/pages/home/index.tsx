@@ -6,7 +6,7 @@ import Edit from 'assets/svg/edit.svg?react';
 import Placeholder from 'assets/svg/slider.svg?react';
 import LeaguesPanel from 'src/shared/components/panel/league-panel';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div className={classes.container}>
       <LeaguesPanel className={classes.panel} />
@@ -28,4 +28,6 @@ const Home = () => {
   );
 };
 
-export default Home;
+HomePage.displayName = 'Home';
+
+export default HomePage;

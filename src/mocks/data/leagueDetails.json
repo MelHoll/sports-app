@@ -1,0 +1,149 @@
+{
+    "id": "123",
+    "name": "Cooed Doubles",
+    "schedule": [{
+      "date": "2023-05-22T18:00:00",
+      "matches": [{
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }, {
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }, {
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }]
+    },{
+      "date": "2023-05-22T18:00:00",
+      "matches": [{
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }, {
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }, {
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }]
+    },{
+      "date": "2023-05-22T18:00:00",
+      "matches": [{
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }, {
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }, {
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }]
+    },{
+      "date": "2023-05-22T18:00:00",
+      "matches": [{
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }, {
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }, {
+        "time": "2023-05-22T18:00:00",
+        "teamHome": {
+          "teamName": "Party of Two", 
+          "teamId": "123"
+        },
+        "teamAway": {
+          "teamName": "Will work for Sets", 
+          "teamId": "321"
+        }, 
+        "court": "Court 1"
+      }]
+    }]
+  }

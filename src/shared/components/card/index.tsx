@@ -10,18 +10,16 @@ interface CardProps {
 
 export const Card: FC<CardProps> = ({title, subtitle, buttons, children}) => {
   return (
-    <>
-      <div className={`${classes.container} ${classes.mainPanel}`}>
-        <div className={classes.textContainer}>
-          <div className={classes.headerText} title={title}>{title}</div>
-          {subtitle && <div className={classes.content} title={subtitle}>{subtitle}</div>}
-        </div>
-        {buttons && <div className={classes.buttonContainer}>
-          {buttons.map((Button, index)=> <Button key={index} />)}
-        </div>}
-        {children}
+    <div key={crypto.randomUUID()} className={`${classes.container} ${classes.mainPanel}`}>
+      <div className={classes.textContainer}>
+        <div className={classes.headerText} title={title}>{title}</div>
+        {subtitle && <div className={classes.content} title={subtitle}>{subtitle}</div>}
       </div>
-    </>
+      {buttons && <div className={classes.buttonContainer}>
+        {buttons.map((Button, index)=> <Button key={index} />)}
+      </div>}
+      {children}
+    </div>
   );
 };
 

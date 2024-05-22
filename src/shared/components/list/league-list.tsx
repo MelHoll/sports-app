@@ -2,56 +2,26 @@ import List from '.';
 import classes from './styles.module.scss';
 import LeagueCard from 'components/card/league-card';
 import { useNavigate } from "react-router-dom";
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { FilterOption } from 'components/filter';
+import { serviceClient } from 'src/services/serviceClient';
+import { League } from 'src/models/League';
 
 interface LeagueListProps {
     filters?: FilterOption[];
 }
 
 export const LeagueList: FC<LeagueListProps> = ({filters}) => {
+    const [leagues, setLeagues] = useState<League[] | undefined>();
     const navigate = useNavigate();
 
-    const items = [
-        {
-            id: '321',
-            name: 'Cooed Quads', 
-            level: 'B', 
-            location: 'Miller Park',
-            day: 'Thursday', 
-            startDate: new Date(),
-            endDate: new Date(),
-        },
-        {
-            id: '4321',
-            name: "Men's Doubles", 
-            level: 'A', 
-            location: 'Miller Park',
-            day: 'Monday', 
-            startDate: new Date(),
-            endDate: new Date(),
-        },
-        {
-            id: '54321',
-            name: "Women's Doubles", 
-            level: 'A', 
-            location: 'Miller Park',
-            day: 'Wednesday', 
-            startDate: new Date(),
-            endDate: new Date(),
-        },
-        {
-            id: '3210',
-            name: 'Cooed Doubles', 
-            level: 'BB', 
-            location: 'Miller Park',
-            day: 'Wednesday', 
-            startDate: new Date(),
-            endDate: new Date(),
-        }
-    ];
+    useEffect(() => {
+        serviceClient.leagueGetAll().then((leagues: League[])  => {
+            setLeagues(leagues);
+        });
+    }, [])
 
-    const filteredItems = items.filter((item) => {
+    const filteredItems = leagues ? leagues.filter((item) => {
         if(!filters) return true;
 
         let include = false;
@@ -66,7 +36,7 @@ export const LeagueList: FC<LeagueListProps> = ({filters}) => {
         });
 
         return include;
-    });
+    }) : [];
 
     return <List elements={filteredItems?.map((league) => 
         () => <div 

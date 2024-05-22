@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { strings } from 'src/shared/localizations/strings';
-import { Home } from 'src/pages';
+import { HomePage } from 'src/pages';
 import { Header } from 'components/index';
 import ConfirmMessage from 'components/confirmMessage';
 import classes from 'styles/_common.module.scss';
 import LeaguesPanel from './shared/components/panel/league-panel';
-import LeagueDetails from 'src/pages/leagueDetails';
+import LeagueDetailsPage from 'src/pages/leagueDetails';
+import ProfilePage from './pages/profile';
 
 const { routeNames } = strings;
 
@@ -16,9 +17,10 @@ export interface RouteType {
 }
 
 const routes: RouteType[] = [
-  { path: '/', name: routeNames.home, Component: Home },
+  { path: '/', name: routeNames.home, Component: HomePage },
   { path: '/leagues', name: routeNames.leagues, Component: () => <LeaguesPanel /> },
-  { path: '/leagues/:leagueId', name: routeNames.leagues,  Component: LeagueDetails},
+  { path: '/leagues/:leagueId', name: routeNames.leagues,  Component: LeagueDetailsPage},
+  { path: '/leagues/team/:teamId', name: routeNames.profile,  Component: ProfilePage},
   { path: '*', Component: () => <ConfirmMessage title={'No Page Found'} content={'This page does not exist.'}/> },
 ];
 

@@ -1,24 +1,15 @@
 import { FC } from 'react';
 import Card from '.';
-
-export interface LeagueProps {
-    id: string;
-    name: string; 
-    level: string; 
-    location: string;
-    day: string;
-    startDate: Date;
-    endDate: Date;
-}
+import { League } from 'models/League';
 
 interface LeagueCardProps {
-    league: LeagueProps;
+    league: League;
 }
 
 export const LeagueCard: FC<LeagueCardProps> = ({league}) => {
     const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric'});
-    const startDate = dateFormat.format(league.startDate);
-    const endDate = dateFormat.format(league.endDate);
+    const startDate = dateFormat.format(typeof league.startDate === 'string' ? new Date(league.startDate) : league.startDate);
+    const endDate = dateFormat.format(typeof league.endDate === 'string' ? new Date(league.endDate) : league.endDate);
 
   return (
     <Card 

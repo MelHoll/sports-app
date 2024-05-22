@@ -24,10 +24,11 @@
     "paths": {
       "src/*": ["./src/*"],
       "components/*":["./src/shared/components/*"],
-      "assets": ["./src/shared/assets/*"],
-      "styles": ["./src/shared/styles/*"],
+      "assets/*": ["./src/shared/assets/*"],
+      "styles/*": ["./src/shared/styles/*"],
+      "models/*": ["./src/models/*"],
     }
   },
-  "include": ["src"],
+  "include": ["src", "public/mockServiceWorker.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

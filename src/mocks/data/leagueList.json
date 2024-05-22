@@ -1,0 +1,38 @@
+[
+    {
+        "id": "321",
+        "name": "Cooed Quads", 
+        "level": "B", 
+        "location": "Miller Park",
+        "day": "Thursday", 
+        "startDate": "2020-11-14T18:02:00",
+        "endDate": "2020-11-14T18:02:00"
+    },
+    {
+        "id": "321",
+        "name": "Men's Doubles", 
+        "level": "A", 
+        "location": "Miller Park",
+        "day": "Monday", 
+        "startDate": "2020-11-14T18:02:00",
+        "endDate": "2020-11-14T18:02:00"
+    },
+    {
+        "id": "321",
+        "name": "Women's Doubles", 
+        "level": "A", 
+        "location": "Miller Park",
+        "day": "Wednesday", 
+        "startDate": "2020-11-14T18:02:00",
+        "endDate": "2020-11-14T18:02:00"
+    },
+    {
+        "id": "321",
+        "name": "Cooed Doubles", 
+        "level": "BB", 
+        "location": "Miller Park",
+        "day": "Wednesday", 
+        "startDate": "2020-11-14T18:02:00",
+        "endDate": "2020-11-14T18:02:00"
+    }
+]
