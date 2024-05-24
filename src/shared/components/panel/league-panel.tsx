@@ -10,24 +10,22 @@ const LeaguesPanel = () => {
   const [leagueFilter, setLeagueFilters] = useState<FilterOption[] | undefined>(undefined);
 
   return (
-    <Panel className={classes.mainPanel}>
-        <div className={classes.flexSpaceBetween}>
-            <div className={classes.headerText}>{strings.league.activeLeagues}</div>
-        <Filter 
-            options={[
-                {
-                    propertyKey: 'level',
-                    propertyName: 'Level',
-                    values: ['B', 'BB', 'A']
-                },
-                {
-                    propertyKey: 'day',
-                    propertyName: 'Day',
-                    values: ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
-                }
-            ]}
-            onChange={setLeagueFilters} />
-        </div>
+    <Panel className={classes.mainPanel} 
+        header={strings.league.activeLeagues}
+        headerItem={<Filter 
+        options={[
+            {
+                propertyKey: 'level',
+                propertyName: 'Level',
+                values: ['B', 'BB', 'A']
+            },
+            {
+                propertyKey: 'day',
+                propertyName: 'Day',
+                values: ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
+            }
+        ]}
+        onChange={setLeagueFilters} />}>
         <LeagueList filters={leagueFilter}/>
     </Panel>
   );
