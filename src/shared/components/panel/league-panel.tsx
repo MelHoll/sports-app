@@ -6,11 +6,11 @@ import { strings } from 'src/shared/localizations/strings';
 import classes from './styles.module.scss';
 
 
-const LeaguesPanel = ({...props}) => {
+const LeaguesPanel = () => {
   const [leagueFilter, setLeagueFilters] = useState<FilterOption[] | undefined>(undefined);
 
   return (
-    <Panel {...props}>
+    <Panel className={classes.mainPanel}>
         <div className={classes.flexSpaceBetween}>
             <div className={classes.headerText}>{strings.league.activeLeagues}</div>
         <Filter 

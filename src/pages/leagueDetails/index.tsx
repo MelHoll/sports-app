@@ -1,4 +1,4 @@
-import classes from './styles.module.scss';
+import classes from 'styles/_common.module.scss';
 import Panel from "components/panel";
 import Card from "components/card";
 // import Edit from 'assets/svg/edit.svg?react';
@@ -22,20 +22,21 @@ const LeagueDetailsPage = () => {
         setLeagueData(leagueDetails);
       });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className={classes.container}>    
-      <Panel className={classes.panel} header="Schedule">
+    <div className={classes.mainContainer}>    
+      <Panel className={classes.mainPanel} header="Schedule">
       {leagueData && leagueData.schedule.map((matchup: Schedule, index: number) => 
         <Card key={index} title={dateFormat.format(typeof matchup.date === 'string' ? new Date(matchup.date) : matchup.date)}>
-            {matchup.matches.map((match: Match) => <MatchCard {...match}/>)}
+            <div>{matchup.matches.map((match: Match) => <MatchCard key={crypto.randomUUID()} match={match}/>)}</div>
         </Card> 
-        )}
-        </Panel>
-      <Panel className={classes.panel} header="Ranking">
+      )}
+      </Panel>
+      <Panel className={classes.mainPanel} header="Ranking">
         <span>TODO</span>
-        </Panel>
+      </Panel>
     </div>
   );
 };

@@ -8,7 +8,7 @@ interface ListProps {
 export const List: FC<ListProps> = ({elements}) => {
   return (
     <div className={classes.container}>
-      {elements?.map((Element, index) => <Element key={index}/>)}
+      {elements?.map((Element) => <Element key={crypto.randomUUID()}/>)}
     </div>
   );
 };

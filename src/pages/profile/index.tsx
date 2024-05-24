@@ -1,38 +1,48 @@
-import classes from './styles.module.scss';
+import classes from 'styles/_common.module.scss';
 import Panel from "components/panel";
-import Button from "components/button";
-import Card from "src/shared/components/card";
-import Edit from 'assets/svg/edit.svg?react';
-import Placeholder from 'assets/svg/slider.svg?react';
+// import Button from "components/button";
+// import Card from "src/shared/components/card";
+// import Edit from 'assets/svg/edit.svg?react';
+// import Placeholder from 'assets/svg/slider.svg?react';
 import MatchCard from 'src/shared/components/card/match-card';
 import { useEffect, useState } from 'react';
 import { serviceClient } from 'src/services/serviceClient';
 import { Match } from 'src/models/Match';
+import { useParams } from 'react-router-dom';
+import { Team } from 'models/Team';
+import List from 'src/shared/components/list';
+import { League } from 'src/models/League';
+import LeagueCard from 'src/shared/components/card/league-card';
 
 const ProfilePage = () => {
-  const [matches, setMatches] = useState<Match[] | undefined>();
+  const {teamId} = useParams()
+  const [team, setTeam] = useState<Team | undefined>();
+
 
   useEffect(() => {
-    serviceClient.matchesGetForTeam("321").then((matches: Match[]) => {
-      setMatches(matches);
-    });
+    if(teamId) {
+      serviceClient.teamGet("321").then((team: Team) => {
+        setTeam(team);
+      });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
-    <div className={classes.container}>
-      <Panel className={classes.panel} header="Profile Info"/>
-      <Panel className={classes.panel} header="Leagues">
-        <Card 
-          title="Cooed Doubles (BB)" 
-          subtitle="Thursdays / Miller Park / May 16 - August 30" 
-          buttons={[
-            () => <Button LeftIcon={Placeholder} onClick={() => console.log("pressed!!")}/>, 
-            () => <Button LeftIcon={Edit} onClick={() => console.log("pressed!!")}/>, 
-          ]}
-        >
-          { matches?.map((match: Match) =>  <MatchCard {...match}/>) }
-        </Card>
-        </Panel>
+    <div className={classes.mainContainer}>
+      <Panel className={classes.mainPanel} header="Profile Info">
+        <div>
+          Name: {team?.teamName}
+          Team: {team?.players.map((player) => `${player.firstName} ${player.lastName}`).join(", ")}
+        </div>
+      </Panel>
+      <Panel className={classes.mainPanel} header="Leagues">
+        {team && team.leagues.map((league: League) => {
+        return <LeagueCard key={league.id} league={league}>
+          {league && <List elements={league.matches?.map((match: Match) => () => <MatchCard match={match}/>) }/>}
+        </LeagueCard>
+        })}
+      </Panel>
     </div>
   );
 };

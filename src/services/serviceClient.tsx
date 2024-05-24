@@ -1,7 +1,7 @@
 import axios, { Axios } from "axios";
-import { League } from "src/models/League";
-import { LeagueDetails } from "src/models/LeagueDetails";
-import { Match } from "src/models/Match";
+import { League } from "models/League";
+import { LeagueDetails } from "models/LeagueDetails";
+import { Team } from "models/Team";
 import { API_URL, API_VERSION } from "src/shared/constants";
 
 export class ServiceClient {
@@ -30,12 +30,16 @@ export class ServiceClient {
 
   async leagueDetailGet(id: string): Promise<LeagueDetails> {
     const response = await axios.get<LeagueDetails>(`${this.restUrl}/${API_VERSION}/league/details/${id}`, this.axiosConfig);
-    console.log(response);
     return response.data
   }
 
-  async matchesGetForTeam(teamId: string): Promise<Match[]> {
-    const response = await axios.get<Match[]>(`${this.restUrl}/${API_VERSION}/team/${teamId}/matches/`, this.axiosConfig);
+  async upcomingGamesGet(teamId: string): Promise<League[]> {
+    const response = await axios.get<League[]>(`${this.restUrl}/${API_VERSION}/upcoming/${teamId}`, this.axiosConfig);
+    return response.data
+  }
+
+  async teamGet(teamId: string): Promise<Team> {
+    const response = await axios.get<Team>(`${this.restUrl}/${API_VERSION}/team/${teamId}`, this.axiosConfig);
     return response.data
   }
 }

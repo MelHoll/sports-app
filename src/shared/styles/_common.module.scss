@@ -1,3 +1,5 @@
+@use './mixins';
+
 $border-radius: 8px;
 $max-screen-width: 1280px;
 $default-padding: 10px;
@@ -15,10 +17,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
 
 body {
   margin: 0;
@@ -39,6 +37,29 @@ body {
     margin: 20px;
   }
 }
+
+.mainContainer {
+    display: flex;
+    align-items: stretch;
+    height: 85vh; //TODO
+    @include mixins.mobile {
+      flex-direction: column;
+    }
+ }
+
+ .mainPanel:first-child {
+    margin-right: 15px;
+    @include mixins.mobile {
+      margin-right: 0px;
+      margin-bottom: 15px;
+    }
+ }
+ 
+ .mainPanel {
+    flex-grow: 1;
+    @extend .cardStyles;
+  } 
+
 
 .flexSpaceBetween {
   display: flex;
@@ -61,7 +82,7 @@ body {
   cursor: pointer;
 }
 
-.mainPanel {
+.cardStyles {
   background-color: var(--panelBackground);
   border: 1px solid var(--border);
   border-radius: $border-radius;

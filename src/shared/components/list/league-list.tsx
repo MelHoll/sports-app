@@ -1,11 +1,11 @@
 import List from '.';
-import classes from './styles.module.scss';
 import LeagueCard from 'components/card/league-card';
 import { useNavigate } from "react-router-dom";
 import { FC, useEffect, useState } from 'react';
 import { FilterOption } from 'components/filter';
 import { serviceClient } from 'src/services/serviceClient';
 import { League } from 'src/models/League';
+import classes from 'styles/_common.module.scss';
 
 interface LeagueListProps {
     filters?: FilterOption[];
@@ -41,7 +41,7 @@ export const LeagueList: FC<LeagueListProps> = ({filters}) => {
     return <List elements={filteredItems?.map((league) => 
         () => <div 
                 key={league.id}
-                className={`${classes.wrapper} ${classes.clickable}`} 
+                className={`${classes.clickable}`} 
                 onClick={() => navigate(`/leagues/${league.id}`)}>
                     <LeagueCard league={league} />
             </div>
