@@ -13,7 +13,18 @@
           "teamName": "Will work for Sets", 
           "teamId": "321"
         }, 
-        "court": "Court 1"
+        "court": "Court 1", 
+        "results": [
+          {
+            "homeScore": 25, 
+            "awayScore": 22
+          }, 
+          {
+            
+            "homeScore": 22, 
+            "awayScore": 25
+          }
+        ]
       }, {
         "time": "2023-05-22T18:00:00",
         "teamHome": {

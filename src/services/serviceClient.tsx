@@ -2,6 +2,7 @@ import axios, { Axios } from "axios";
 import { League } from "models/League";
 import { LeagueDetails } from "models/LeagueDetails";
 import { Team } from "models/Team";
+import { Ranking } from "src/models/Ranking";
 import { API_URL, API_VERSION } from "src/shared/constants";
 
 export class ServiceClient {
@@ -40,6 +41,16 @@ export class ServiceClient {
 
   async teamGet(teamId: string): Promise<Team> {
     const response = await axios.get<Team>(`${this.restUrl}/${API_VERSION}/team/${teamId}`, this.axiosConfig);
+    return response.data
+  }
+
+  async rankingGetForTeam(teamId: string): Promise<Ranking> {
+    const response = await axios.get<Ranking>(`${this.restUrl}/${API_VERSION}/team/ranking/${teamId}`, this.axiosConfig);
+    return response.data
+  }
+
+  async rankingGetForLeague(id: string): Promise<Ranking[]> {
+    const response = await axios.get<Ranking[]>(`${this.restUrl}/${API_VERSION}/league/ranking/${id}`, this.axiosConfig);
     return response.data
   }
 }

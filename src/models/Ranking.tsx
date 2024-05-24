@@ -1,6 +1,6 @@
 import { Team } from "models/Team";
 
-export interface Rankings {
+export interface Ranking {
     team: Team;
     ranking: number;
     wins: number;

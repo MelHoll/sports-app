@@ -12,5 +12,16 @@
   align-items: center;
 }
 
-.content {
+.scores {
+  display: flex;
+  justify-content: space-between;
+
+  .score {
+    display: flex;
+  }
+}
+
+.editScore {
+  display: flex;
+  justify-content: space-between;
 }
