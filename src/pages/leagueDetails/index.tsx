@@ -10,6 +10,8 @@ import { Schedule } from 'src/models/Schedule';
 import { Match } from 'src/models/Match';
 import MatchCard from 'src/shared/components/card/match-card';
 import { serviceClient } from 'src/services/serviceClient';
+import { strings } from 'src/shared/localizations/strings';
+import RankingsPanel from 'src/panels/ranking';
 
 const LeagueDetailsPage = () => {
   const { leagueId } = useParams();
@@ -27,16 +29,14 @@ const LeagueDetailsPage = () => {
 
   return (
     <div className={classes.mainContainer}>    
-      <Panel className={classes.mainPanel} header="Schedule">
+      <Panel className={classes.mainPanel} header={strings.league.schedule}>
       {leagueData && leagueData.schedule.map((matchup: Schedule, index: number) => 
         <Card key={index} title={dateFormat.format(typeof matchup.date === 'string' ? new Date(matchup.date) : matchup.date)}>
             <div>{matchup.matches.map((match: Match) => <MatchCard key={crypto.randomUUID()} match={match}/>)}</div>
         </Card> 
       )}
       </Panel>
-      <Panel className={classes.mainPanel} header="Ranking">
-        <span>TODO</span>
-      </Panel>
+      {leagueData && <RankingsPanel rankings={leagueData?.rankings}/>}
     </div>
   );
 };

@@ -17,5 +17,9 @@ export default {
   league: {
     activeLeagues: 'Active Leagues',
     upcomingGames: 'Upcoming Games',
-  }
+    schedule: 'Schedule', 
+  }, 
+  team: {
+    ranking: 'Ranking'
+  },
 };

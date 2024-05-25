@@ -4,6 +4,6 @@ import { League } from "models/League";
 
 export interface LeagueDetails extends League {
     schedule: Schedule[];
-    rankings: Ranking;
+    rankings: Ranking[];
 }
   

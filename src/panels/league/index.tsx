@@ -13,7 +13,7 @@ const LeaguesPanel = () => {
     <Panel className={classes.mainPanel} 
         header={strings.league.activeLeagues}
         headerItem={<Filter 
-        options={[
+        options={[ //TODO programatically generate from data
             {
                 propertyKey: 'level',
                 propertyName: 'Level',

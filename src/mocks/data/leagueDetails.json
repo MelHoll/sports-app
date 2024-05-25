@@ -156,5 +156,47 @@
         }, 
         "court": "Court 1"
       }]
-    }]
+    }], 
+    "rankings": [
+      {
+        "team": {
+          "teamName": "Smelly Guys",
+          "teamId": "321"
+        },
+        "ranking": 1,
+        "wins": 5,
+        "ties": 0,
+        "loses": 0
+      }, 
+      {
+        "team": {
+          "teamName": "Smelly Guys",
+          "teamId": "321"
+        },
+        "ranking": 2,
+        "wins": 4,
+        "ties": 0,
+        "loses": 1
+      }, 
+      {
+        "team": {
+          "teamName": "Smelly Guys",
+          "teamId": "321"
+        },
+        "ranking": 3,
+        "wins": 2,
+        "ties": 1,
+        "loses": 2
+      }, 
+      {
+        "team": {
+          "teamName": "Smelly Guys",
+          "teamId": "321"
+        },
+        "ranking": 4,
+        "wins": 0,
+        "ties": 0,
+        "loses": 5
+      }
+    ]
   }

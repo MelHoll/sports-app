@@ -13,6 +13,7 @@ import { Team } from 'models/Team';
 import List from 'src/shared/components/list';
 import { League } from 'src/models/League';
 import LeagueCard from 'src/shared/components/card/league-card';
+import { strings } from 'src/shared/localizations/strings';
 
 const ProfilePage = () => {
   const {teamId} = useParams()
@@ -21,7 +22,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if(teamId) {
-      serviceClient.teamGet("321").then((team: Team) => {
+      serviceClient.teamGet(teamId).then((team: Team) => {
         setTeam(team);
       });
     }
@@ -30,13 +31,13 @@ const ProfilePage = () => {
 
   return (
     <div className={classes.mainContainer}>
-      <Panel className={classes.mainPanel} header="Profile Info">
+      <Panel className={classes.mainPanel} header={strings.routeNames.profile}> 
         <div>
           Name: {team?.teamName}
           Team: {team?.players.map((player) => `${player.firstName} ${player.lastName}`).join(", ")}
         </div>
       </Panel>
-      <Panel className={classes.mainPanel} header="Leagues">
+      <Panel className={classes.mainPanel} header={strings.routeNames.leagues}>
         {team && team.leagues.map((league: League) => {
         return <LeagueCard key={league.id} league={league}>
           {league && <List elements={league.matches?.map((match: Match) => () => <MatchCard match={match}/>) }/>}

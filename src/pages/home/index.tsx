@@ -1,6 +1,6 @@
 import classes from 'styles/_common.module.scss';
-import LeaguesPanel from 'src/shared/components/panel/league-panel';
-import UpcomingGamesPanel from 'src/shared/components/panel/upcoming-games-panel';
+import LeaguesPanel from 'src/panels/league';
+import UpcomingGamesPanel from 'src/panels/upcoming-games';
 
 const HomePage = () => {
   return (

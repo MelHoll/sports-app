@@ -4,7 +4,7 @@ import { HomePage } from 'src/pages';
 import { Header } from 'components/index';
 import ConfirmMessage from 'components/confirmMessage';
 import classes from 'styles/_common.module.scss';
-import LeaguesPanel from './shared/components/panel/league-panel';
+import LeaguesPanel from './panels/league';
 import LeagueDetailsPage from 'src/pages/leagueDetails';
 import ProfilePage from './pages/profile';
 

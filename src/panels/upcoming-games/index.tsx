@@ -7,6 +7,7 @@ import { Match } from 'models/Match';
 import Card from 'src/shared/components/card';
 import MatchCard from 'src/shared/components/card/match-card';
 import List from 'components/list';
+import { strings } from 'src/shared/localizations/strings';
 
 interface UpcomingMatch {
   leagueid: string;
@@ -42,10 +43,11 @@ const UpcomingGamesPanel = () => {
 
       setUpcomingMatches(upcoming);
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-      <Panel className={classes.mainPanel} header="Upcoming Games">
+      <Panel className={classes.mainPanel} header={strings.league.upcomingGames}>
         <List elements={upcomingMatches?.map((upcoming) => () =>  
             <Card key={upcoming.leagueid} title={upcoming.leagueName} subtitle={upcoming.leagueLocation}>
                 <MatchCard match={upcoming.match} showDate={true}/>

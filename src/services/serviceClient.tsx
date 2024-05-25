@@ -2,6 +2,7 @@ import axios, { Axios } from "axios";
 import { League } from "models/League";
 import { LeagueDetails } from "models/LeagueDetails";
 import { Team } from "models/Team";
+import { GameResult } from "src/models/Match";
 import { Ranking } from "src/models/Ranking";
 import { API_URL, API_VERSION } from "src/shared/constants";
 
@@ -52,6 +53,15 @@ export class ServiceClient {
   async rankingGetForLeague(id: string): Promise<Ranking[]> {
     const response = await axios.get<Ranking[]>(`${this.restUrl}/${API_VERSION}/league/ranking/${id}`, this.axiosConfig);
     return response.data
+  }
+
+  async updateMatchGameResults(matchId: string, gameIndex: number, result: GameResult) {
+    const response = await axios.post<GameResult>(`${this.restUrl}/${API_VERSION}/match/${matchId}/game/${gameIndex}`, result, this.axiosConfig);
+    return response.data!
+  }
+
+  async matchGameRemove(matchId: string, gameIndex: number): Promise<void> {
+    await axios.delete(`${this.restUrl}/${API_VERSION}/match/${matchId}/game/${gameIndex}`, this.axiosConfig)
   }
 }
 

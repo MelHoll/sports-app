@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { FC, useState } from 'react';
-import { Match } from 'src/models/Match';
+import { GameResult, Match } from 'src/models/Match';
 import Button from 'components/button';
 import RightArrow from 'assets/svg/arrow-right.svg?react';
 import DownArrow from 'assets/svg/arrow-down.svg?react';
 import classes from 'styles/_common.module.scss'
 import ResultCard from './result-card';
+import { serviceClient } from 'src/services/serviceClient';
 
 interface MatchProps {
     match: Match;
@@ -34,12 +35,18 @@ const MatchCard:  FC<MatchProps> = ({
     };
 
     const removeResult = (index: number) => {
-        const updatedResults = [...results];
-        updatedResults.splice(index, 1);
-        setResults(updatedResults);
+        serviceClient.matchGameRemove(match.id, index).then(() => {
+            const updatedResults = [...results];
+            updatedResults.splice(index, 1);
+            setResults(updatedResults);
+        })
     };
 
-    const Icon = showResults ? DownArrow : RightArrow ;
+    const updateScore = (index: number, result: GameResult) => {
+        return serviceClient.updateMatchGameResults(match.id, index, result);
+    }
+
+    const Icon = showResults ? DownArrow : RightArrow;
 
     return (
         <div>
@@ -47,11 +54,14 @@ const MatchCard:  FC<MatchProps> = ({
             <div> 
                 <div className={classes.flexSpaceBetween}>
                     
-                    <div><Icon height={20} width={20} 
-                        fill='black'
-                        className={classes.clickable} 
-                        onClick={() => setShowResults(!showResults)}/> 
-                        {timeFormat.format(typeof time === 'string' ? new Date(time) : time)}</div> 
+                    <div>
+                        <Icon height={20} width={20} 
+                            fill='black'
+                            className={classes.clickable} 
+                            onClick={() => setShowResults(!showResults)}
+                        /> 
+                        {timeFormat.format(typeof time === 'string' ? new Date(time) : time)}
+                    </div> 
                     <div>{court}</div>
                     <div>
                         <Link 
@@ -69,7 +79,14 @@ const MatchCard:  FC<MatchProps> = ({
                 </div>
                 {showResults && 
                 <div>
-                    {results && results.map((result, index) => <ResultCard key={index} result={result} onRemoved={() => removeResult(index)}/>)}
+                    {results && results.map((result, index) => 
+                        <ResultCard 
+                            key={index} 
+                            result={result} 
+                            onRemoved={() => removeResult(index)} 
+                            onUpdate={(result: GameResult) => updateScore(index, result)}
+                        />
+                    )}
                     {!results && <div>No games to show.</div>}
                     <Button label={"Add game"} onClick={addGame}/>
                 </div>}

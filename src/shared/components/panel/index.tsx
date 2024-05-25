@@ -1,4 +1,4 @@
-import classes from "./styles.module.scss"; //TODO pull classes from common directly?
+import classes from "styles/_common.module.scss";
 
 interface PanelProps {
     children?: JSX.Element[] | JSX.Element;
