@@ -19,7 +19,7 @@ export const LeagueList: FC<LeagueListProps> = ({filters}) => {
         serviceClient.leagueGetAll().then((leagues: League[])  => {
             setLeagues(leagues);
         });
-    }, [])
+    }, []);
 
     const filteredItems = leagues ? leagues.filter((item) => {
         if(!filters) return true;

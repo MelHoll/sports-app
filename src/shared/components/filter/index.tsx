@@ -35,6 +35,7 @@ export const Filter: FC<FilterProps> = ({
     });
 
     setFilters(initialFilter);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const filterClicked = (key: string, value: string, currentlyChecked: boolean) => { //TODO

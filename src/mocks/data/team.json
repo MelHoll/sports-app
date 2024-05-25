@@ -7,7 +7,8 @@
             "lastName": "Holl",
             "email": "mel@fakeemail.org",
             "phone": "610-123-4567",
-            "teamIds": ["321"]
+            "teamIds": ["321"],
+            "captain": true
         },
         {
             "firstName": "Joe",
@@ -31,8 +32,7 @@
             "teamIds": ["321"]
         }
     ],
-    "leagues": [
-    {
+    "league": {
         "id": "321",
         "name": "Cooed Quads", 
         "level": "B", 
@@ -64,5 +64,4 @@
             "court": "Court 1"
         }]
     }
-    ]
 }

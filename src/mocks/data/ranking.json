@@ -1,0 +1,10 @@
+{
+    "team": {
+      "teamName": "Smelly Guys",
+      "teamId": "321"
+    },
+    "ranking": 3,
+    "wins": 2,
+    "ties": 1,
+    "loses": 2
+}
