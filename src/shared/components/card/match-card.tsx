@@ -69,7 +69,7 @@ const MatchCard:  FC<MatchProps> = ({
                 </div>
                 {showResults && 
                 <div>
-                    {results && results.map((result, index) => <ResultCard result={result} onRemoved={() => removeResult(index)}/>)}
+                    {results && results.map((result, index) => <ResultCard key={index} result={result} onRemoved={() => removeResult(index)}/>)}
                     {!results && <div>No games to show.</div>}
                     <Button label={"Add game"} onClick={addGame}/>
                 </div>}
