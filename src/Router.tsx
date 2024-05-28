@@ -8,6 +8,7 @@ import LeaguesPanel from './panels/league';
 import LeagueDetailsPage from 'src/pages/leagueDetails';
 import ProfilePage from './pages/profile';
 import RulesPage from './pages/rules';
+import TeamsPage from './pages/teams';
 
 const { routeNames } = strings;
 
@@ -21,6 +22,7 @@ const routes: RouteType[] = [
   { path: '/', name: routeNames.home, Component: HomePage },
   { path: '/leagues', name: routeNames.leagues, Component: () => <LeaguesPanel /> },
   { path: '/leagues/:leagueId', name: routeNames.leagues,  Component: LeagueDetailsPage },
+  { path: '/leagues/:leagueId/teams', name: routeNames.leagues,  Component: TeamsPage },
   { path: '/leagues/team/:teamId', name: routeNames.profile,  Component: ProfilePage },
   { path: '/rules/', name: routeNames.rules,  Component: RulesPage },
   { path: '*', Component: () => <ConfirmMessage title={'No Page Found'} content={'This page does not exist.'}/> },

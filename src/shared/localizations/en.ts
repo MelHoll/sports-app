@@ -13,11 +13,13 @@ export default {
     profile: 'Profile', 
     settings: 'Settings', 
     login: 'Login',
+    teams: 'Teams',
   },
   league: {
     activeLeagues: 'Active Leagues',
     upcomingGames: 'Upcoming Games',
     schedule: 'Schedule', 
+    seeTeams: 'See Teams'
   }, 
   team: {
     ranking: 'Ranking'

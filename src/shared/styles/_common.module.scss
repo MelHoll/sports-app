@@ -41,17 +41,17 @@ body {
 .mainContainer {
     display: flex;
     align-items: stretch;
-    height: 85vh; //TODO
+    min-height: 85vh; //TODO
     @include mixins.mobile {
       flex-direction: column;
     }
  }
 
  .mainPanel:first-child {
-    margin-right: 15px;
+    margin-right: 10px;
     @include mixins.mobile {
       margin-right: 0px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
  }
  
@@ -60,6 +60,9 @@ body {
     @extend .cardStyles;
   } 
 
+.flex {
+  display: flex;
+}
 
 .flexSpaceBetween {
   display: flex;

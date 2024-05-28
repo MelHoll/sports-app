@@ -5,6 +5,7 @@ import Team from 'src/mocks/data/team.json';
 import Upcoming from 'src/mocks/data/upcomingMatches.json';
 import GameResult from 'src/mocks/data/gameResult.json';
 import Ranking from 'src/mocks/data/ranking.json';
+import Teams from 'src/mocks/data/teams.json';
 import { API_URL, API_VERSION } from "src/shared/constants";
 
 const handlers = [
@@ -13,6 +14,9 @@ const handlers = [
     }), 
     http.get(`${API_URL}/${API_VERSION}/league/details/*`, () => {
         return HttpResponse.json(LeagueDetails);
+    }), 
+    http.get(`${API_URL}/${API_VERSION}/league/*/teams`, () => {
+        return HttpResponse.json(Teams);
     }), 
     http.get(`${API_URL}/${API_VERSION}/team/ranking/*`, () => {
         return HttpResponse.json(Ranking);
