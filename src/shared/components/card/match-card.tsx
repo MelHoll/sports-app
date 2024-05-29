@@ -19,7 +19,7 @@ const MatchCard:  FC<MatchProps> = ({
 }) => 
 {
     const [showResults, setShowResults] = useState(false);
-    const [results, setResults] = useState(match.results);
+    const [results, setResults] = useState(match.results || []);
 
     const {
         time, 
