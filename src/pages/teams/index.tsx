@@ -27,10 +27,11 @@ const TeamsPage = () => {
     <div className={commonClasses.mainContainer}>
       <Panel className={commonClasses.mainPanel} header={strings.routeNames.teams}>
         <>
-        {teams && <div className={commonClasses.clickable} 
-          onClick={() => navigate(`/leagues/${leagueId}`)}>
-            <LeagueCard league={teams?.league}/>
-          </div>}
+        {teams && <LeagueCard 
+                    className={commonClasses.clickable} 
+                    onClick={() => navigate(`/leagues/${leagueId}`)}
+                    league={teams?.league}/>
+        }
         <div className={classes.teamContainer}>
         {teams && teams.teams.map((team) => <TeamCard team={team}/>)}
         </div>

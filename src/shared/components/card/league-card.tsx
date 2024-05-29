@@ -1,22 +1,22 @@
-import { FC, ReactElement } from 'react';
+import { FC } from 'react';
 import Card from '.';
 import { League } from 'models/League';
 
-interface LeagueCardProps extends React.PropsWithChildren  {
+interface LeagueCardProps extends React.HTMLAttributes<HTMLDivElement>  {
     league: League;
-    children?: ReactElement;
 }
 
-export const LeagueCard: FC<LeagueCardProps> = ({league, children}) => {
+export const LeagueCard: FC<LeagueCardProps> = ({league, children, ...props}) => {
     const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric'});
     const startDate = dateFormat.format(typeof league.startDate === 'string' ? new Date(league.startDate) : league.startDate);
     const endDate = dateFormat.format(typeof league.endDate === 'string' ? new Date(league.endDate) : league.endDate);
 
   return (
     <Card 
+        {...props}
         title={`${league.name} (${league.level})`} 
         subtitle={`${league.day} / ${league.location} / ${startDate} - ${endDate}`} >
-          {children}
+          {children as unknown as JSX.Element}
     </Card>
   );
 };
