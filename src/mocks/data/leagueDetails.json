@@ -1,11 +1,13 @@
 {
-    "id": "123",
-    "name": "Cooed Doubles",
-    "level": "BB", 
-    "location": "Miller Park",
-    "day": "Thursday", 
-    "startDate": "2020-11-14T18:02:00",
-    "endDate": "2020-11-14T18:02:00",
+    "league": {
+      "id": "123",
+      "name": "Cooed Doubles",
+      "level": "BB", 
+      "location": "Miller Park",
+      "day": "Thursday", 
+      "startDate": "2020-11-14T18:02:00",
+      "endDate": "2020-11-14T18:02:00"
+    },
     "schedule": [{
       "date": "2023-05-22T18:00:00",
       "matches": [{

@@ -2,12 +2,12 @@ import classes from 'styles/_common.module.scss';
 import Panel from "components/panel";
 import { useEffect, useState } from 'react';
 import { serviceClient } from 'src/services/serviceClient';
-import { League } from 'models/League';
 import { Match } from 'models/Match';
 import Card from 'src/shared/components/card';
 import MatchCard from 'src/shared/components/card/match-card';
 import List from 'components/list';
 import { strings } from 'src/shared/localizations/strings';
+import { LeagueMatches } from 'src/models/LeagueMatches';
 
 interface UpcomingMatch {
   leagueid: string;
@@ -23,13 +23,13 @@ const UpcomingGamesPanel = () => {
   const user = {id: "321"}
 
   useEffect(() => {
-    serviceClient.upcomingGamesGet(user.id).then((upcomingLeagues: League[]) => {
+    serviceClient.upcomingGamesGet(user.id).then((upcomingLeagues: LeagueMatches[]) => {
       const upcoming: UpcomingMatch[] = [];
-      upcomingLeagues.forEach((league) => {
-        const upcomingMatch = league.matches.map((match) => { return {
-          leagueid: league.id,
-          leagueName: `${league.name} (${league.level})`, 
-          leagueLocation: league.location, 
+      upcomingLeagues.forEach((data) => {
+        const upcomingMatch = data.matches.map((match) => { return {
+          leagueid: data.league.id,
+          leagueName: `${data.league.name} (${data.league.level})`, 
+          leagueLocation: data.league.location, 
           match: match
         } as UpcomingMatch})
         upcoming.push(...upcomingMatch);

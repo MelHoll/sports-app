@@ -1,0 +1,73 @@
+{
+    "player": {
+        "firstName": "Melanie",
+        "lastName": "Holl",
+        "email": "mel@fakeemail.org",
+        "phone": "610-123-4567",
+        "teamIds": ["321"]
+    }, 
+    "leagues": [{
+        "id": "321",
+        "name": "Cooed Quads", 
+        "level": "B", 
+        "location": "Miller Park",
+        "day": "Thursday", 
+        "startDate": "2020-11-14T18:02:00",
+        "endDate": "2020-11-14T18:02:00",
+        "matches": [{
+            "time": "2023-05-22T18:00:00",
+            "teamHome": {
+              "teamName": "Party of Two", 
+              "teamId": "123"
+            },
+            "teamAway": {
+              "teamName": "Will work for Sets", 
+              "teamId": "321"
+            }, 
+            "court": "Court 1"
+        }, {
+            "time": "2023-05-22T18:00:00",
+            "teamHome": {
+              "teamName": "Party of Two", 
+              "teamId": "123"
+            },
+            "teamAway": {
+              "teamName": "Will work for Sets", 
+              "teamId": "321"
+            }, 
+            "court": "Court 1"
+        }]
+    }, 
+    {
+        "id": "321",
+        "name": "Cooed Quads", 
+        "level": "B", 
+        "location": "Miller Park",
+        "day": "Thursday", 
+        "startDate": "2020-11-14T18:02:00",
+        "endDate": "2020-11-14T18:02:00",
+        "matches": [{
+            "time": "2023-05-22T18:00:00",
+            "teamHome": {
+              "teamName": "Party of Two", 
+              "teamId": "123"
+            },
+            "teamAway": {
+              "teamName": "Will work for Sets", 
+              "teamId": "321"
+            }, 
+            "court": "Court 1"
+        }, {
+            "time": "2023-05-22T18:00:00",
+            "teamHome": {
+              "teamName": "Party of Two", 
+              "teamId": "123"
+            },
+            "teamAway": {
+              "teamName": "Will work for Sets", 
+              "teamId": "321"
+            }, 
+            "court": "Court 1"
+        }]
+    }]
+}

@@ -6,6 +6,8 @@ import { LeagueTeams } from "models/LeagueTeams";
 import { GameResult } from "models/Match";
 import { Ranking } from "models/Ranking";
 import { API_URL, API_VERSION } from "src/shared/constants";
+import { LeagueMatches } from "src/models/LeagueMatches";
+import { PlayerProfile } from "src/models/PlayerProfile";
 
 export class ServiceClient {
   private restUrl: string;
@@ -19,6 +21,11 @@ export class ServiceClient {
       baseURL: `${restUrl}/${API_VERSION}`,
       headers: this.axiosConfig.headers,
     });
+  }
+
+  async playerProfileGet(id: string): Promise<PlayerProfile> {
+    const response = await axios.get<PlayerProfile>(`${this.restUrl}/${API_VERSION}/player/${id}`, this.axiosConfig);
+    return response.data
   }
  
   async leagueGet(id: string): Promise<League> {
@@ -41,8 +48,8 @@ export class ServiceClient {
     return response.data
   }
 
-  async upcomingGamesGet(teamId: string): Promise<League[]> {
-    const response = await axios.get<League[]>(`${this.restUrl}/${API_VERSION}/upcoming/${teamId}`, this.axiosConfig);
+  async upcomingGamesGet(teamId: string): Promise<LeagueMatches[]> {
+    const response = await axios.get<LeagueMatches[]>(`${this.restUrl}/${API_VERSION}/upcoming/${teamId}`, this.axiosConfig);
     return response.data
   }
 
@@ -53,11 +60,6 @@ export class ServiceClient {
 
   async rankingGetForTeam(teamId: string): Promise<Ranking> {
     const response = await axios.get<Ranking>(`${this.restUrl}/${API_VERSION}/team/ranking/${teamId}`, this.axiosConfig);
-    return response.data
-  }
-
-  async rankingGetForLeague(id: string): Promise<Ranking[]> {
-    const response = await axios.get<Ranking[]>(`${this.restUrl}/${API_VERSION}/league/ranking/${id}`, this.axiosConfig);
     return response.data
   }
 

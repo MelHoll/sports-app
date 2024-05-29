@@ -1,3 +1,5 @@
+@use "styles";
+
 .mainPanel {
     position: relative;
 }
@@ -6,5 +8,5 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    padding: 10px;
+    padding: styles.$default-padding;
 }

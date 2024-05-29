@@ -30,7 +30,7 @@ const LeagueDetailsPage = () => {
 
   return (
     <div>   
-     {leagueData && <div><LeagueCard league={leagueData}/></div>}
+     {leagueData && <div><LeagueCard league={leagueData.league}/></div>}
      <div className={classes.flex}>
         <Panel className={classes.mainPanel} header={strings.league.schedule}>
         {leagueData && leagueData.schedule.map((matchup: Schedule, index: number) => 
