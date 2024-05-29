@@ -6,10 +6,11 @@ import ConfirmMessage from 'components/confirmMessage';
 import classes from 'styles/_common.module.scss';
 import LeaguesPanel from 'src/panels/league';
 import LeagueDetailsPage from 'src/pages/leagueDetails';
-import ProfilePage from 'src/pages/profile';
 import RulesPage from 'src/pages/rules';
 import TeamsPage from 'src/pages/teams';
 import RegisterPage from 'src/pages/register';
+import TeamProfilePage from 'src/pages/teamProfile';
+import PlayerProfilePage from 'src/pages/playerProfile';
 
 const { routeNames } = strings;
 
@@ -24,8 +25,8 @@ const routes: RouteType[] = [
   { path: '/leagues', name: routeNames.leagues, Component: () => <LeaguesPanel /> },
   { path: '/leagues/:leagueId', name: routeNames.leagues,  Component: LeagueDetailsPage },
   { path: '/leagues/:leagueId/teams', name: routeNames.leagues,  Component: TeamsPage },
-  { path: '/leagues/team/:teamId', name: routeNames.profile,  Component: ProfilePage },
-  { path: '/leagues/player/:playerId', name: routeNames.profile,  Component: ProfilePage },
+  { path: '/leagues/team/:teamId', name: routeNames.profile,  Component: TeamProfilePage },
+  { path: '/leagues/player/:playerId', name: routeNames.profile,  Component: PlayerProfilePage },
   { path: '/rules/', name: routeNames.rules,  Component: RulesPage },
   { path: '/register/', name: routeNames.rules,  Component: RegisterPage },
   { path: '*', Component: () => <ConfirmMessage title={'No Page Found'} content={'This page does not exist.'}/> },
