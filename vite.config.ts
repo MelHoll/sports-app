@@ -11,7 +11,8 @@ export default defineConfig({
       components: "/src/shared/components",
       assets: "/src/shared/assets",
       styles: "/src/shared/styles",
-      models: "/src/models"
+      models: "/src/models", 
+      form: "/src/shared/components/form-elements"
     },
   },
 })

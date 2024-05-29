@@ -1,7 +1,7 @@
 import commonClasses from "styles/_common.module.scss";
 import classes from './styles.module.scss';
 
-interface PanelProps extends React.HTMLAttributes<HTMLDivElement> {
+interface PanelProps extends React.HTMLProps<HTMLDivElement> {
     headerItem?: JSX.Element;
     header?: string;
     bottomElement?: JSX.Element
@@ -14,7 +14,7 @@ export const Panel = ({children, header, headerItem, bottomElement, ...props}: P
           <div className={commonClasses.headerText}>{header}</div>
         {headerItem}
       </div>}
-      {children as unknown as JSX.Element}
+      {children}
       { bottomElement && <div className={classes.bottomElement}>{bottomElement}</div> }
     </div>
   );

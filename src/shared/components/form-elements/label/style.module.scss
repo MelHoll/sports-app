@@ -1,0 +1,6 @@
+@use "styles";
+
+.required {
+    vertical-align: text-top;
+    fill: styles.$alert-red;
+}
