@@ -1,5 +1,3 @@
-import { Match } from "models/Match";
-
 export interface League {
     id: string;
     active: boolean;
@@ -9,7 +7,6 @@ export interface League {
     day: string;
     startDate: Date;
     endDate: Date;
-    matches: Match[];
 }
   
 

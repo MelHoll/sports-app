@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import Card from '.';
+import Card, { CardProps } from '.';
 import { League } from 'models/League';
 
-interface LeagueCardProps extends React.HTMLAttributes<HTMLDivElement>  {
+interface LeagueCardProps extends React.HTMLAttributes<HTMLDivElement> {
     league: League;
 }
 
-export const LeagueCard: FC<LeagueCardProps> = ({league, children, ...props}) => {
+export const LeagueCard: FC<LeagueCardProps & CardProps> = ({league, children, ...props}) => {
     const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric'});
     const startDate = dateFormat.format(typeof league.startDate === 'string' ? new Date(league.startDate) : league.startDate);
     const endDate = dateFormat.format(typeof league.endDate === 'string' ? new Date(league.endDate) : league.endDate);

@@ -6,11 +6,11 @@ import { Match } from 'src/models/Match';
 import List from 'src/shared/components/list';
 import LeagueCard from 'src/shared/components/card/league-card';
 import { strings } from 'src/shared/localizations/strings';
-import { League } from 'src/models/League';
+import { LeagueMatches } from 'src/models/LeagueMatches';
 
 interface ProfileProps {
   profileElement: JSX.Element;
-  leagues: League[];
+  leagues: LeagueMatches[];
 }
 
 const ProfilePage: FC<ProfileProps> = ({profileElement, leagues}) => {
@@ -20,8 +20,8 @@ const ProfilePage: FC<ProfileProps> = ({profileElement, leagues}) => {
         {profileElement}
       </Panel>
       <Panel className={classes.mainPanel} header={strings.routeNames.leagues}>
-        {leagues && leagues.map((league) => <LeagueCard key={league.id} league={league}>
-          <List elements={league.matches?.map((match: Match) => () => <MatchCard key={match.id} match={match}/>) }/>
+        {leagues && leagues.map((info) => <LeagueCard key={info.league.id} league={info.league}>
+          <List elements={info.matches?.map((match: Match) => () => <MatchCard key={match.id} match={match}/>) }/>
         </LeagueCard>)
         }
       </Panel>

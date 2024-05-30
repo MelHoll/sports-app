@@ -25,7 +25,7 @@ const handlers = [
     http.get(`${API_URL}/${API_VERSION}/team/ranking/*`, () => {
         return HttpResponse.json(Ranking);
     }), 
-    http.get(`${API_URL}/${API_VERSION}/team/*`, () => {
+    http.get(`${API_URL}/${API_VERSION}/team/matches/*`, () => {
         return HttpResponse.json(Team);
     }), 
     http.get(`${API_URL}/${API_VERSION}/upcoming/*`, () => {

@@ -1,7 +1,7 @@
-import { League } from "./League";
+import { LeagueMatches } from "./LeagueMatches";
 import { Player } from "./Player";
 
 export interface PlayerProfile {
     player: Player;
-    leagues: League[];
+    leagues: LeagueMatches[];
 }

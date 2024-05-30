@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import classes from './styles.module.scss';
 
-interface CardProps {
+export interface CardProps {
   title?: string;
   subtitle?: string;
   buttons?: (() => JSX.Element)[];

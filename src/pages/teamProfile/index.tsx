@@ -3,15 +3,15 @@ import { serviceClient } from 'src/services/serviceClient';
 import { useParams } from 'react-router-dom';
 import ProfilePage from 'src/shared/components/profile';
 import TeamCard from 'src/shared/components/card/team-card';
-import { Team } from 'src/models/Team';
+import { TeamMatches } from 'src/models/TeamMatches';
 
 const TeamProfilePage = () => {
   const {teamId} = useParams()
-  const [team, setTeam] = useState<Team | undefined>();
+  const [team, setTeam] = useState<TeamMatches | undefined>();
 
   useEffect(() => {
     if(teamId){
-      serviceClient.teamGet(teamId).then((team: Team) => {
+      serviceClient.teamMatchesGet(teamId).then((team: TeamMatches) => {
         setTeam(team);
       });
     }
@@ -19,7 +19,8 @@ const TeamProfilePage = () => {
   }, []);
 
   return (<>
-   { team && <ProfilePage profileElement={<TeamCard team={team}/>} leagues={[team.league]} /> }
+   { team && <ProfilePage profileElement={<TeamCard team={team.team}/>} 
+                          leagues={[team.leagueMatches]} /> }
   </>);
 };
 

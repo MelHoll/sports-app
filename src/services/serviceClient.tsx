@@ -1,13 +1,13 @@
 import axios, { Axios } from "axios";
 import { League } from "models/League";
 import { LeagueDetails } from "models/LeagueDetails";
-import { Team } from "models/Team";
 import { LeagueTeams } from "models/LeagueTeams";
 import { GameResult } from "models/Match";
 import { Ranking } from "models/Ranking";
 import { API_URL, API_VERSION } from "src/shared/constants";
 import { LeagueMatches } from "src/models/LeagueMatches";
 import { PlayerProfile } from "src/models/PlayerProfile";
+import { TeamMatches } from "src/models/TeamMatches";
 
 export class ServiceClient {
   private restUrl: string;
@@ -53,8 +53,8 @@ export class ServiceClient {
     return response.data
   }
 
-  async teamGet(teamId: string): Promise<Team> {
-    const response = await axios.get<Team>(`${this.restUrl}/${API_VERSION}/team/${teamId}`, this.axiosConfig);
+  async teamMatchesGet(teamId: string): Promise<TeamMatches> {
+    const response = await axios.get<TeamMatches>(`${this.restUrl}/${API_VERSION}/team/matches/${teamId}`, this.axiosConfig);
     return response.data
   }
 

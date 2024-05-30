@@ -6,6 +6,7 @@ import { FilterOption } from 'components/filter';
 import { serviceClient } from 'src/services/serviceClient';
 import { League } from 'src/models/League';
 import classes from 'styles/_common.module.scss';
+import Button from 'components/button';
 
 interface LeagueListProps {
     filters?: FilterOption[];
@@ -43,7 +44,9 @@ export const LeagueList: FC<LeagueListProps> = ({filters}) => {
                 key={league.id}
                 className={`${classes.clickable}`} 
                 onClick={() => navigate(`/leagues/${league.id}`)}>
-                    <LeagueCard league={league} />
+                    <LeagueCard 
+                    league={league} 
+                    buttons={[() => <Button />]}/>
             </div>
     )}/>;
 };

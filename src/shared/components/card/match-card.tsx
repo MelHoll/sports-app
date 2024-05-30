@@ -7,15 +7,17 @@ import DownArrow from 'assets/svg/arrow-down.svg?react';
 import classes from 'styles/_common.module.scss'
 import ResultCard from './result-card';
 import { serviceClient } from 'src/services/serviceClient';
+import { CardProps } from '.';
 
-interface MatchProps {
+interface MatchProps extends React.HTMLAttributes<HTMLDivElement> {
     match: Match;
     showDate?: boolean;
 }
 
 const MatchCard:  FC<MatchProps> = ({
     match,
-    showDate = false
+    showDate = false, 
+    ...props
 }) => 
 {
     const [showResults, setShowResults] = useState(false);
@@ -49,7 +51,7 @@ const MatchCard:  FC<MatchProps> = ({
     const Icon = showResults ? DownArrow : RightArrow;
 
     return (
-        <div>
+        <div {...props}>
             {showDate && <div>{dateFormat.format(typeof time === 'string' ? new Date(time) : time)}</div>}
             <div> 
                 <div className={classes.flexSpaceBetween}>
