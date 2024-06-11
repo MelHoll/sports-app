@@ -21,7 +21,7 @@ export const TextInput = <T extends FieldValues,> ({
         }
         <div >
           <div>
-            <input {...field} placeholder={props.name} />
+            <input {...field} placeholder={label} />
             {children}
           </div>
           {fieldState.error && <p role="alert" title={fieldState.error.message}>{fieldState.error.message}</p>}

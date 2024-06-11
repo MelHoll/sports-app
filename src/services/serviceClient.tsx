@@ -33,8 +33,8 @@ export class ServiceClient {
     return response.data
   }
 
-  async leagueGetAll(): Promise<League[]> {
-    const response = await axios.get<League[]>(`${this.restUrl}/${API_VERSION}/league`, this.axiosConfig);
+  async leagueGetAll(register?: boolean): Promise<League[]> {
+    const response = await axios.get<League[]>(`${this.restUrl}/${API_VERSION}/league${register ? '/register' : ''}`, this.axiosConfig);
     return response.data
   }
 

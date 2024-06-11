@@ -5,7 +5,7 @@ import TextInput from 'form/text-input';
 
 export interface FormProps<T extends FieldValues> extends React.HTMLAttributes<HTMLDivElement> {
   onSubmitForm: SubmitHandler<T>;
-  defaultvalues: T;
+  defaultValues: T;
   fields: FieldProps[];
   readOnly?: boolean;
 }
@@ -24,11 +24,12 @@ export interface FieldProps {
 export const Form = <T extends FieldValues,> ({
   onSubmitForm,
   fields,
+  defaultValues,
   children,
-  ...formProps
+  ...props
 }: FormProps<T>) => {
   const { handleSubmit, control } = useForm<T>({
-    defaultValues: formProps.defaultvalues as DefaultValues<T>,
+    defaultValues: defaultValues as DefaultValues<T>,
     mode: "onChange",
   })
 
@@ -38,11 +39,12 @@ export const Form = <T extends FieldValues,> ({
 
   return (
     <form onSubmit={handleSubmit(onSubmitForm)}>
-      <div {...formProps}>
+      <div {...props}>
         <div>
-          {fields.map((field) => {
+          {fields.map((field, index) => {
             const FieldComponent = fieldMap[field.type] || fieldMap[FieldType.Text];
             return <FieldComponent 
+              key={index}
               label={field.label} 
               required={field.required} 
               control={control} 

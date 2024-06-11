@@ -1,23 +1,19 @@
 import List from '.';
 import LeagueCard from 'components/card/league-card';
-import { useNavigate } from "react-router-dom";
 import { FC, useEffect, useState } from 'react';
 import { FilterOption } from 'components/filter';
 import { serviceClient } from 'src/services/serviceClient';
 import { League } from 'src/models/League';
-import classes from 'styles/_common.module.scss';
-import Button from 'components/button';
-
 interface LeagueListProps {
     filters?: FilterOption[];
+    register?: boolean;
 }
 
-export const LeagueList: FC<LeagueListProps> = ({filters}) => {
+export const LeagueList: FC<LeagueListProps> = ({filters, register}) => {
     const [leagues, setLeagues] = useState<League[] | undefined>();
-    const navigate = useNavigate();
 
     useEffect(() => {
-        serviceClient.leagueGetAll().then((leagues: League[])  => {
+        serviceClient.leagueGetAll(register).then((leagues: League[])  => {
             setLeagues(leagues);
         });
     }, []);
@@ -39,15 +35,17 @@ export const LeagueList: FC<LeagueListProps> = ({filters}) => {
         return include;
     }) : [];
 
+
     return <List elements={filteredItems?.map((league) => 
-        () => <div 
-                key={league.id}
-                className={`${classes.clickable}`} 
-                onClick={() => navigate(`/leagues/${league.id}`)}>
+        () => {
+        const navigateString = `/${register ? 'register' : 'leagues'}/${league.id}`;
+        
+        return <div 
+                key={league.id}>
                     <LeagueCard 
                     league={league} 
-                    buttons={[() => <Button />]}/>
-            </div>
+                    navigateTo={navigateString} />
+            </div>}
     )}/>;
 };
 

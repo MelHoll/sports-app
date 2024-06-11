@@ -28,6 +28,7 @@ const TeamsPage = () => {
       <Panel className={commonClasses.mainPanel} header={strings.routeNames.teams}>
         <>
         {teams && <LeagueCard 
+                    hideSeeTeams
                     className={commonClasses.clickable} 
                     onClick={() => navigate(`/leagues/${leagueId}`)}
                     league={teams?.league}/>

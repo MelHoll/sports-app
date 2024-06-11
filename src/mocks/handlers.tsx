@@ -1,5 +1,6 @@
 import { HttpResponse, http } from "msw";
 import LeagueList from 'src/mocks/data/leagueList.json';
+import League from 'src/mocks/data/league.json';
 import LeagueDetails from 'src/mocks/data/leagueDetails.json';
 import Team from 'src/mocks/data/team.json';
 import Upcoming from 'src/mocks/data/upcomingMatches.json';
@@ -16,11 +17,17 @@ const handlers = [
     http.get(`${API_URL}/${API_VERSION}/league`, () => {
         return HttpResponse.json(LeagueList);
     }), 
+    http.get(`${API_URL}/${API_VERSION}/league/register`, () => {
+        return HttpResponse.json(LeagueList);
+    }), 
     http.get(`${API_URL}/${API_VERSION}/league/details/*`, () => {
         return HttpResponse.json(LeagueDetails);
     }), 
     http.get(`${API_URL}/${API_VERSION}/league/*/teams`, () => {
         return HttpResponse.json(Teams);
+    }), 
+    http.get(`${API_URL}/${API_VERSION}/league/*`, () => {
+        return HttpResponse.json(League);
     }), 
     http.get(`${API_URL}/${API_VERSION}/team/ranking/*`, () => {
         return HttpResponse.json(Ranking);

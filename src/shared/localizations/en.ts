@@ -2,7 +2,10 @@ export default {
   common: {
     ok: 'Ok',
     changeTheme: 'Change theme', 
-
+  },
+  error: {
+    noPageTitle: 'No Page Found', 
+    noPageContent: 'This page does not exist.'
   },
   routeNames: {
     home: 'Home',
