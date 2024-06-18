@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# Sports App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application is a personal project to create a sports website. The intention is to have a website that will allow players to sign up for and view active leagues and allow the players in these leagues to see the schedule, teams, and players along keep track of their score and record.
 
-Currently, two official plugins are available:
+# Noted libraries used in this App
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Vite
+- Storybook
+- React Router (react-router-dom)
+- React Hook Form
+- React Localization
+- Axios
+- Mock Service Worker
 
-## Expanding the ESLint configuration
+# Running the App
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Node Version:** 18.0.0
 
-- Configure the top-level `parserOptions` property like this:
+Before anything, make sure you are in the sports-app directory (that includes the package.json) and run `npm i`
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Now you can run the application or see the components with Storybook.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To run the application locally, run the following:
+`npm run dev`
+
+To look at individual components in Storybook, run the following:
+`npm run storybook`

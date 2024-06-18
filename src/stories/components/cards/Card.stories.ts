@@ -1,14 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Card from 'src/shared/components/card';
 import 'src/index.css'
-import { IconLeft } from '../Button.stories';
-import Edit from 'assets/svg/edit.svg?react';
-import Placeholder from 'assets/svg/slider.svg?react';
-import Button from 'src/shared/components/button';
+// import { IconLeft } from '../Button.stories';
+// import Edit from 'assets/svg/edit.svg?react';
+// import Placeholder from 'assets/svg/slider.svg?react';
+// import Button from 'src/shared/components/button';
+import { withRouter } from 'storybook-addon-remix-react-router';
 
 const meta = {
   title: 'Example/Card',
   component: Card,
+  decorators: [withRouter],
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',

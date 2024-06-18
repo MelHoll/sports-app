@@ -22,6 +22,6 @@ type Story = StoryObj<typeof meta>;
 // More on interaction testing: https://storybook.js.org/docs/writing-tests/interaction-testing
 export const Default: Story = {
   args: {
-    team: TeamJson as unknown as Team, 
+    team: TeamJson.team as Team, 
   },
 };

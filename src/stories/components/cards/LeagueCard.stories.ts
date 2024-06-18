@@ -3,11 +3,13 @@ import 'src/index.css'
 import LeagueCard from 'components/card/league-card';
 import LeagueJson from 'src/mocks/data/league.json';
 import { League } from 'src/models/League';
-import Button from 'src/shared/components/button';
+// import Button from 'src/shared/components/button';
+import { withRouter } from 'storybook-addon-remix-react-router';
 
 const meta = {
   title: 'Example/LeagueCard',
   component: LeagueCard,
+  decorators: [withRouter],
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
