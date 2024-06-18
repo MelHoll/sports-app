@@ -1,17 +1,20 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import Panel from "components/panel";
 import LeagueList from "components/list/league-list";
 import Filter, { FilterOption } from 'components/filter';
 import { strings } from 'src/shared/localizations/strings';
 import classes from './styles.module.scss';
 
+interface LeaguePanelProps {
+  register?: boolean;
+}
 
-const LeaguesPanel = () => {
+const LeaguesPanel: FC<LeaguePanelProps> = ({register = false}) => {
   const [leagueFilter, setLeagueFilters] = useState<FilterOption[] | undefined>(undefined);
 
   return (
     <Panel className={classes.mainPanel} 
-        header={strings.league.activeLeagues}
+        header={register ? strings.league.register : strings.league.activeLeagues}
         headerItem={<Filter 
         options={[ //TODO programatically generate from data
             {
@@ -26,7 +29,7 @@ const LeaguesPanel = () => {
             }
         ]}
         onChange={setLeagueFilters} />}>
-        <LeagueList filters={leagueFilter}/>
+        <LeagueList register={register} filters={leagueFilter}/>
     </Panel>
   );
 };

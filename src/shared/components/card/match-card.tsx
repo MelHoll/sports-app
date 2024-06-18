@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom';
-import { FC, useState } from 'react';
+import { FC, useMemo, useState } from 'react';
 import { GameResult, Match } from 'src/models/Match';
 import Button from 'components/button';
 import RightArrow from 'assets/svg/arrow-right.svg?react';
 import DownArrow from 'assets/svg/arrow-down.svg?react';
 import classes from 'styles/_common.module.scss'
-import ResultCard from './result-card';
+import ResultCard from 'components/card/result-card';
 import { serviceClient } from 'src/services/serviceClient';
+import { strings } from 'src/shared/localizations/strings';
 import { CardProps } from '.';
 
-interface MatchProps extends React.HTMLAttributes<HTMLDivElement> {
+interface MatchProps extends CardProps {
     match: Match;
     showDate?: boolean;
 }
@@ -27,7 +28,7 @@ const MatchCard:  FC<MatchProps> = ({
         time, 
         court, 
         teamHome, 
-    teamAway} = match;
+        teamAway } = match;
 
     const timeFormat = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric'});
     const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', weekday: "long" });
@@ -50,19 +51,23 @@ const MatchCard:  FC<MatchProps> = ({
 
     const Icon = showResults ? DownArrow : RightArrow;
 
+    const dateTimeValue = useMemo(() => {
+        return typeof time === 'string' ? new Date(time) : time
+    }, [time]);
+
     return (
         <div {...props}>
-            {showDate && <div>{dateFormat.format(typeof time === 'string' ? new Date(time) : time)}</div>}
+            {showDate && <div title={dateFormat.format(dateTimeValue)}>{dateFormat.format(dateTimeValue)}</div>}
             <div> 
-                <div className={classes.flexSpaceBetween}>
+                <div className={`${classes.flexSpaceBetween}`}>
                     
-                    <div>
+                    <div title={timeFormat.format(dateTimeValue)}>
                         <Icon height={20} width={20} 
                             fill='black'
                             className={classes.clickable} 
                             onClick={() => setShowResults(!showResults)}
                         /> 
-                        {timeFormat.format(typeof time === 'string' ? new Date(time) : time)}
+                        {timeFormat.format(dateTimeValue)}
                     </div> 
                     <div>{court}</div>
                     <div>
@@ -89,8 +94,8 @@ const MatchCard:  FC<MatchProps> = ({
                             onUpdate={(result: GameResult) => updateScore(index, result)}
                         />
                     )}
-                    {!results && <div>No games to show.</div>}
-                    <Button label={"Add game"} onClick={addGame}/>
+                    {!results && <div title={strings.match.noGames}>{strings.match.noGames}</div>}
+                    <Button label={strings.match.addGame} onClick={addGame}/>
                 </div>}
             </div>
         </div>

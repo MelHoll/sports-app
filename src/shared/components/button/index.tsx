@@ -1,14 +1,11 @@
-import { FC, MouseEventHandler } from 'react';
+import { FC } from 'react';
 import classes from './styles.module.scss';
 
 
-interface ButtonProps {
+interface ButtonProps  extends React.HTMLAttributes<HTMLButtonElement>{
   label?: string;
-  onClick?: MouseEventHandler;
   disabled?: boolean;
   secondary?: boolean;
-  className?: string;
-  children?: JSX.Element[] | JSX.Element;
   iconSize?: number;
   LeftIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
   RightIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -31,13 +28,13 @@ export const Button: FC<ButtonProps> = ({
 
   return (
     <button
+      title={label}
       {...buttonProps}
       onClick={disabled ? undefined : onClick}
       className={`${className} ${classes.button} ${classes[buttonClass]} ${label ? '' : classes.iconOnly}`}
-      title={label}
     >
       {LeftIcon && <LeftIcon height={iconSize} width={iconSize} fill={buttonFontColor}/>}
-      {label && <span className={classes.buttonLabel}>{label} </span>}
+      {label && <span className={classes.buttonLabel}>{label}</span>}
       {children}
       {RightIcon && <RightIcon height={iconSize} width={iconSize} fill={buttonFontColor}/>}
     </button>

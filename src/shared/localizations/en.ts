@@ -2,6 +2,9 @@ export default {
   common: {
     ok: 'Ok',
     changeTheme: 'Change theme', 
+    filter: 'Filter',
+    submit: 'Submit', 
+    required: 'Required'
   },
   error: {
     noPageTitle: 'No Page Found', 
@@ -22,9 +25,19 @@ export default {
     activeLeagues: 'Active Leagues',
     upcomingGames: 'Upcoming Games',
     schedule: 'Schedule', 
-    seeTeams: 'See Teams'
+    seeTeams: 'See Teams', 
+    register: 'Register'
   }, 
   team: {
     ranking: 'Ranking'
   },
+  match: {
+    noGames: 'No games to show.', 
+    addGame: 'Add game',
+  },
+  register: {
+    firstNameLabel: 'First Name', 
+    lastNameLabel: 'Last Name', 
+    teamNameLabel: 'Team Name',
+  }
 };

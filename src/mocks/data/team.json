@@ -4,6 +4,7 @@
         "teamId": "321",
         "players": [
             {
+                "id": "123",
                 "firstName": "Melanie",
                 "lastName": "Holl",
                 "email": "mel@fakeemail.org",
@@ -12,6 +13,7 @@
                 "captain": true
             },
             {
+                "id": "1234",
                 "firstName": "Joe",
                 "lastName": "Brundage",
                 "email": "joe@fakeemail.org",
@@ -19,6 +21,7 @@
                 "teamIds": ["321"]
             },
             {
+                "id": "12345",
                 "firstName": "Lily",
                 "lastName": "Taylor",
                 "email": "lily@fakeemail.org",
@@ -26,6 +29,7 @@
                 "teamIds": ["321"]
             },
             {
+                "id": "123456",
                 "firstName": "Josh",
                 "lastName": "Heffner",
                 "email": "Josh@fakeemail.org",

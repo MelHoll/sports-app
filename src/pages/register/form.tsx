@@ -7,28 +7,36 @@ import { useEffect, useState } from 'react';
 import { serviceClient } from 'src/services/serviceClient';
 import { useParams } from 'react-router-dom';
 import { League } from 'src/models/League';
+import { strings } from 'src/shared/localizations/strings';
 
-interface IFormInputs {
+interface IRegisterData {
   FirstName: string, 
-  LastName: string
+  LastName: string, 
+  TeamName: string,
 }
+
+const defaultValues = { 
+  FirstName: '', 
+  LastName: '', 
+  TeamName: '' 
+};
 
 const fields = [
     {
       type: FieldType.Text,
-      label: "First Name",
+      label: strings.register.firstNameLabel,
       required: true, 
       name: "FirstName"
     }, 
     {
       type: FieldType.Text,
-      label: "Last Name",
+      label: strings.register.lastNameLabel,
       required: true, 
       name: "LastName"
     }, 
     {
       type: FieldType.Text,
-      label: "Team Name",
+      label: strings.register.teamNameLabel,
       required: true, 
       name: "TeamName"
     }, 
@@ -48,16 +56,13 @@ const RegisterPage = () => {
 
   return (
     <div className={classes.mainContainer}>
-      <Panel className={classes.flexSpaceBetween}>
+      <Panel className={classes.flexColumn}>
         {league && <LeagueCard league={league} />}
-        <Form<IFormInputs> 
+        <Form<IRegisterData> 
           onSubmitForm={(data: FieldValues) => {
             console.log(data);
-          } }
-          defaultValues={{ 
-            FirstName: '', 
-            LastName: '' 
-          }} 
+          }}
+          defaultValues={defaultValues} 
           fields={fields}        
         />
       </Panel>

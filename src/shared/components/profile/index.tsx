@@ -20,9 +20,10 @@ const ProfilePage: FC<ProfileProps> = ({profileElement, leagues}) => {
         {profileElement}
       </Panel>
       <Panel className={classes.mainPanel} header={strings.routeNames.leagues}>
-        {leagues && leagues.map((info) => <LeagueCard key={info.league.id} league={info.league}>
-          <List elements={info.matches?.map((match: Match) => () => <MatchCard key={match.id} match={match}/>) }/>
-        </LeagueCard>)
+        {leagues && leagues.map((info) => 
+          <LeagueCard key={info.league.id} league={info.league} > 
+            <List elements={info.matches?.map((match: Match) => () => <MatchCard key={match.id} match={match}/>) }/>
+          </LeagueCard>)
         }
       </Panel>
     </div>

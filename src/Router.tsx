@@ -10,7 +10,6 @@ import RulesPage from 'src/pages/rules';
 import TeamsPage from 'src/pages/teams';
 import TeamProfilePage from 'src/pages/teamProfile';
 import PlayerProfilePage from 'src/pages/playerProfile';
-import RegisterLeagueListPage from 'src/pages/register';
 import RegisterPage from './pages/register/form';
 
 const { routeNames } = strings;
@@ -29,7 +28,7 @@ const routes: RouteType[] = [
   { path: '/leagues/team/:teamId', name: routeNames.profile,  Component: TeamProfilePage },
   { path: '/leagues/player/:playerId', name: routeNames.profile,  Component: PlayerProfilePage },
   { path: '/rules/', name: routeNames.rules,  Component: RulesPage },
-  { path: '/register/', name: routeNames.rules,  Component: RegisterLeagueListPage },
+  { path: '/register/', name: routeNames.rules,  Component: () => <LeaguesPanel register/> },
   { path: '/register/:leagueId', name: routeNames.rules,  Component: RegisterPage },
   { path: '*', Component: () => <ConfirmMessage title={strings.error.noPageTitle} content={strings.error.noPageContent}/> },
 ];

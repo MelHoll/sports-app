@@ -25,12 +25,12 @@ const TeamCard:  FC<TeamProp> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    return <Card>
+    return <Card className={classes.flexColumn}>
         <>
         <div className={classes.headerText}>{team.teamName}</div>
         { ranking && <RankingCard ranking={ranking}/> }
         {team.players.map((player) => 
-            <PlayerCard player={player}/>
+            <PlayerCard key={player.id} player={player}/>
         )}
         </>
     </Card>;

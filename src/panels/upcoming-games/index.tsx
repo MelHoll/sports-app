@@ -49,7 +49,11 @@ const UpcomingGamesPanel = () => {
   return (
       <Panel className={classes.mainPanel} header={strings.league.upcomingGames}>
         <List elements={upcomingMatches?.map((upcoming) => () =>  
-            <Card key={upcoming.leagueid} title={upcoming.leagueName} subtitle={upcoming.leagueLocation}>
+            <Card 
+              key={upcoming.leagueid} 
+              title={upcoming.leagueName} 
+              subtitle={upcoming.leagueLocation}
+              >
                 <MatchCard match={upcoming.match} showDate={true}/>
             </Card>)}
         />

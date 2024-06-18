@@ -1,6 +1,7 @@
 
 import Star from 'assets/svg/star.svg?react';
 import classes from './style.module.scss';
+import { strings } from 'src/shared/localizations/strings';
 
 interface LabelProps {
   text: string;
@@ -13,7 +14,7 @@ export const Label = ({
 }: LabelProps) => {
   return (
     <div title={text}>
-      <span title={text} className={``}>{text}</span>
+      <span title={required ? `${text} (${strings.common.required})` : text} className={``}>{text}</span>
       {required && <Star className={classes.required} width={10} height={10} />}
     </div>
   );

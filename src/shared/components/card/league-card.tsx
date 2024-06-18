@@ -4,8 +4,9 @@ import { League } from 'models/League';
 import Button from 'components/button';
 import Group from 'assets/svg/group.svg?react';
 import { useNavigate } from 'react-router-dom';
+import { strings } from 'src/shared/localizations/strings';
 
-interface LeagueCardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface LeagueCardProps extends CardProps {
     league: League;
     hideSeeTeams?: boolean;
 }
@@ -17,7 +18,7 @@ export const LeagueCard: FC<LeagueCardProps & CardProps> = ({league, hideSeeTeam
   const startDate = dateFormat.format(typeof league.startDate === 'string' ? new Date(league.startDate) : league.startDate);
   const endDate = dateFormat.format(typeof league.endDate === 'string' ? new Date(league.endDate) : league.endDate);
 
-  const buttons = hideSeeTeams ? [] : [() => <Button LeftIcon={Group} onClick={() => navigate(`/leagues/${league.id}/teams`)}/>];
+  const buttons = hideSeeTeams ? [] : [() => <Button title={strings.league.seeTeams} LeftIcon={Group} onClick={() => navigate(`/leagues/${league.id}/teams`)}/>];
   
   return (
     <Card 

@@ -4,6 +4,15 @@ $screen-desktop-1280: 1280px;
 $screen-desktop-1440: 1440px;
 $screen-desktop-1920: 1920px;
 
+.flex {
+  display: flex;
+}
+
+.flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
 .flexRow {
   display: flex;
   flex-direction: row;

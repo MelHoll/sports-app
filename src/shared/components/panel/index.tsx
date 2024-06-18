@@ -11,7 +11,7 @@ export const Panel = ({children, header, headerItem, bottomElement, ...props}: P
   return (
     <div {...props} className={`${commonClasses.mainPanel} ${classes.mainPanel} ${props.className}`}>
       {header &&<div className={commonClasses.flexSpaceBetween}>
-          <div className={commonClasses.headerText}>{header}</div>
+          <div className={commonClasses.headerText} title={header}>{header}</div>
         {headerItem}
       </div>}
       {children}

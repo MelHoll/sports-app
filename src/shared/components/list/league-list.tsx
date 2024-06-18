@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from 'react';
 import { FilterOption } from 'components/filter';
 import { serviceClient } from 'src/services/serviceClient';
 import { League } from 'src/models/League';
+
 interface LeagueListProps {
     filters?: FilterOption[];
     register?: boolean;

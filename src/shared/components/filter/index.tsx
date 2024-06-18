@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import classes from './styles.module.scss';
 import Button from 'components/button';
 import Slider from 'assets/svg/slider.svg?react';
+import { strings } from 'src/shared/localizations/strings';
 
 
 interface FilterProps {
@@ -38,7 +39,7 @@ export const Filter: FC<FilterProps> = ({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const filterClicked = (key: string, value: string, currentlyChecked: boolean) => { //TODO
+  const filterClicked = (key: string, value: string, currentlyChecked: boolean) => { //TODO close when click outside of filter
     //either delete from result, or add to result
     const filtersCopy = JSON.parse(JSON.stringify(filters));
     
@@ -72,6 +73,7 @@ export const Filter: FC<FilterProps> = ({
   return (
     <div className={classes.container}>
     <Button 
+      title={strings.common.filter}
       secondary={filters == undefined || getConveredtFilter(filters) == undefined}
       LeftIcon={Slider} 
       onClick={() => {

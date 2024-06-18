@@ -2,11 +2,13 @@ import React from 'react';
 import Button from 'components/button';
 import { DefaultValues, FieldValues, Path, SubmitHandler, useForm } from 'react-hook-form';
 import TextInput from 'form/text-input';
+import { strings } from 'src/shared/localizations/strings';
 
 export interface FormProps<T extends FieldValues> extends React.HTMLAttributes<HTMLDivElement> {
   onSubmitForm: SubmitHandler<T>;
   defaultValues: T;
   fields: FieldProps[];
+  submitBtnLabel?: string;
   readOnly?: boolean;
 }
 
@@ -23,6 +25,7 @@ export interface FieldProps {
 
 export const Form = <T extends FieldValues,> ({
   onSubmitForm,
+  submitBtnLabel = strings.common.submit,
   fields,
   defaultValues,
   children,
@@ -54,7 +57,7 @@ export const Form = <T extends FieldValues,> ({
         </div>
         {children}
         <div>
-          <Button />
+          <Button label={submitBtnLabel}/>
         </div>
       </div>
     </form>
