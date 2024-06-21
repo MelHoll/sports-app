@@ -46,7 +46,11 @@ const MatchCard:  FC<MatchProps> = ({
     };
 
     const updateScore = (index: number, result: GameResult) => {
-        return serviceClient.updateMatchGameResults(match.id, index, result);
+        return serviceClient.updateMatchGameResults(match.id, index, result).then(() => {
+            const updated = [...results];
+            updated[index] = result;
+            setResults(updated);
+        });
     }
 
     const Icon = showResults ? DownArrow : RightArrow;
