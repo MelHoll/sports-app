@@ -26,7 +26,8 @@ export default {
     upcomingGames: 'Upcoming Games',
     schedule: 'Schedule', 
     seeTeams: 'See Teams', 
-    register: 'Register'
+    register: 'Register', 
+    saveScore: 'Save Score'
   }, 
   team: {
     ranking: 'Ranking'
