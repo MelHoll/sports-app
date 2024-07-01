@@ -11,9 +11,10 @@
     "teams": [
         {
             "teamName": "Smelly Guys",
-            "teamId": "321",
+            "teamId": "321321",
             "players": [
                 {
+                    "id": "321",
                     "firstName": "Melanie",
                     "lastName": "Holl",
                     "email": "mel@fakeemail.org",
@@ -22,6 +23,7 @@
                     "captain": true
                 },
                 {
+                    "id": "4321",
                     "firstName": "Joe",
                     "lastName": "Brundage",
                     "email": "joe@fakeemail.org",
@@ -29,6 +31,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "54321",
                     "firstName": "Lily",
                     "lastName": "Taylor",
                     "email": "lily@fakeemail.org",
@@ -36,6 +39,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "654321",
                     "firstName": "Josh",
                     "lastName": "Heffner",
                     "email": "Josh@fakeemail.org",
@@ -46,9 +50,10 @@
         }, 
         {
             "teamName": "Smelly Guys",
-            "teamId": "321",
+            "teamId": "123321",
             "players": [
                 {
+                    "id": "321",
                     "firstName": "Melanie",
                     "lastName": "Holl",
                     "email": "mel@fakeemail.org",
@@ -57,6 +62,7 @@
                     "captain": true
                 },
                 {
+                    "id": "4321",
                     "firstName": "Joe",
                     "lastName": "Brundage",
                     "email": "joe@fakeemail.org",
@@ -64,6 +70,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "54321",
                     "firstName": "Lily",
                     "lastName": "Taylor",
                     "email": "lily@fakeemail.org",
@@ -71,6 +78,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "654321",
                     "firstName": "Josh",
                     "lastName": "Heffner",
                     "email": "Josh@fakeemail.org",
@@ -81,9 +89,10 @@
         }, 
         {
             "teamName": "Smelly Guys",
-            "teamId": "321",
+            "teamId": "234321",
             "players": [
                 {
+                    "id": "321",
                     "firstName": "Melanie",
                     "lastName": "Holl",
                     "email": "mel@fakeemail.org",
@@ -92,6 +101,7 @@
                     "captain": true
                 },
                 {
+                    "id": "4321",
                     "firstName": "Joe",
                     "lastName": "Brundage",
                     "email": "joe@fakeemail.org",
@@ -99,6 +109,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "54321",
                     "firstName": "Lily",
                     "lastName": "Taylor",
                     "email": "lily@fakeemail.org",
@@ -106,6 +117,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "654321",
                     "firstName": "Josh",
                     "lastName": "Heffner",
                     "email": "Josh@fakeemail.org",
@@ -116,9 +128,10 @@
         }, 
         {
             "teamName": "Smelly Guys",
-            "teamId": "321",
+            "teamId": "87654321",
             "players": [
                 {
+                    "id": "321",
                     "firstName": "Melanie",
                     "lastName": "Holl",
                     "email": "mel@fakeemail.org",
@@ -127,6 +140,7 @@
                     "captain": true
                 },
                 {
+                    "id": "4321",
                     "firstName": "Joe",
                     "lastName": "Brundage",
                     "email": "joe@fakeemail.org",
@@ -134,6 +148,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "54321",
                     "firstName": "Lily",
                     "lastName": "Taylor",
                     "email": "lily@fakeemail.org",
@@ -141,6 +156,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "654321",
                     "firstName": "Josh",
                     "lastName": "Heffner",
                     "email": "Josh@fakeemail.org",
@@ -151,9 +167,10 @@
         }, 
         {
             "teamName": "Smelly Guys",
-            "teamId": "321",
+            "teamId": "7654321",
             "players": [
                 {
+                    "id": "321",
                     "firstName": "Melanie",
                     "lastName": "Holl",
                     "email": "mel@fakeemail.org",
@@ -162,6 +179,7 @@
                     "captain": true
                 },
                 {
+                    "id": "4321",
                     "firstName": "Joe",
                     "lastName": "Brundage",
                     "email": "joe@fakeemail.org",
@@ -169,6 +187,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "54321",
                     "firstName": "Lily",
                     "lastName": "Taylor",
                     "email": "lily@fakeemail.org",
@@ -176,6 +195,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "654321",
                     "firstName": "Josh",
                     "lastName": "Heffner",
                     "email": "Josh@fakeemail.org",
@@ -183,11 +203,13 @@
                     "teamIds": ["321"]
                 }
             ]
-        },  {
+        },
+        {
             "teamName": "Smelly Guys",
-            "teamId": "321",
+            "teamId": "654321",
             "players": [
                 {
+                    "id": "321",
                     "firstName": "Melanie",
                     "lastName": "Holl",
                     "email": "mel@fakeemail.org",
@@ -196,6 +218,7 @@
                     "captain": true
                 },
                 {
+                    "id": "4321",
                     "firstName": "Joe",
                     "lastName": "Brundage",
                     "email": "joe@fakeemail.org",
@@ -203,6 +226,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "54321",
                     "firstName": "Lily",
                     "lastName": "Taylor",
                     "email": "lily@fakeemail.org",
@@ -210,6 +234,46 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "654321",
+                    "firstName": "Josh",
+                    "lastName": "Heffner",
+                    "email": "Josh@fakeemail.org",
+                    "phone": "610-123-4567",
+                    "teamIds": ["321"]
+                }
+            ]
+        },
+        {
+            "teamName": "Smelly Guys",
+            "teamId": "54321",
+            "players": [
+                {
+                    "id": "321",
+                    "firstName": "Melanie",
+                    "lastName": "Holl",
+                    "email": "mel@fakeemail.org",
+                    "phone": "610-123-4567",
+                    "teamIds": ["321"],
+                    "captain": true
+                },
+                {
+                    "id": "4321",
+                    "firstName": "Joe",
+                    "lastName": "Brundage",
+                    "email": "joe@fakeemail.org",
+                    "phone": "610-123-4567",
+                    "teamIds": ["321"]
+                },
+                {
+                    "id": "54321",
+                    "firstName": "Lily",
+                    "lastName": "Taylor",
+                    "email": "lily@fakeemail.org",
+                    "phone": "610-123-4567",
+                    "teamIds": ["321"]
+                },
+                {
+                    "id": "654321",
                     "firstName": "Josh",
                     "lastName": "Heffner",
                     "email": "Josh@fakeemail.org",
@@ -220,9 +284,10 @@
         }, 
         {
             "teamName": "Smelly Guys",
-            "teamId": "321",
+            "teamId": "4321",
             "players": [
                 {
+                    "id": "321",
                     "firstName": "Melanie",
                     "lastName": "Holl",
                     "email": "mel@fakeemail.org",
@@ -231,6 +296,7 @@
                     "captain": true
                 },
                 {
+                    "id": "4321",
                     "firstName": "Joe",
                     "lastName": "Brundage",
                     "email": "joe@fakeemail.org",
@@ -238,6 +304,7 @@
                     "teamIds": ["321"]
                 },
                 {
+                    "id": "54321",
                     "firstName": "Lily",
                     "lastName": "Taylor",
                     "email": "lily@fakeemail.org",
@@ -245,41 +312,7 @@
                     "teamIds": ["321"]
                 },
                 {
-                    "firstName": "Josh",
-                    "lastName": "Heffner",
-                    "email": "Josh@fakeemail.org",
-                    "phone": "610-123-4567",
-                    "teamIds": ["321"]
-                }
-            ]
-        }, 
-        {
-            "teamName": "Smelly Guys",
-            "teamId": "321",
-            "players": [
-                {
-                    "firstName": "Melanie",
-                    "lastName": "Holl",
-                    "email": "mel@fakeemail.org",
-                    "phone": "610-123-4567",
-                    "teamIds": ["321"],
-                    "captain": true
-                },
-                {
-                    "firstName": "Joe",
-                    "lastName": "Brundage",
-                    "email": "joe@fakeemail.org",
-                    "phone": "610-123-4567",
-                    "teamIds": ["321"]
-                },
-                {
-                    "firstName": "Lily",
-                    "lastName": "Taylor",
-                    "email": "lily@fakeemail.org",
-                    "phone": "610-123-4567",
-                    "teamIds": ["321"]
-                },
-                {
+                    "id": "654321",
                     "firstName": "Josh",
                     "lastName": "Heffner",
                     "email": "Josh@fakeemail.org",

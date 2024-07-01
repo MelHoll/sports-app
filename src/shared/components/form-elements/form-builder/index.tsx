@@ -3,6 +3,7 @@ import Button from 'components/button';
 import { DefaultValues, FieldValues, Path, SubmitHandler, useForm } from 'react-hook-form';
 import TextInput from 'form/text-input';
 import { strings } from 'src/shared/localizations/strings';
+import SelectInput from '../select';
 
 export interface FormProps<T extends FieldValues> extends React.HTMLAttributes<HTMLDivElement> {
   onSubmitForm: SubmitHandler<T>;
@@ -13,7 +14,8 @@ export interface FormProps<T extends FieldValues> extends React.HTMLAttributes<H
 }
 
 export enum FieldType {
-  Text
+  Text, 
+  Select
 }
 
 export interface FieldProps {
@@ -38,18 +40,19 @@ export const Form = <T extends FieldValues,> ({
 
   const fieldMap = {
     [FieldType.Text]: TextInput,
+    [FieldType.Select]: SelectInput
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmitForm)}>
       <div {...props}>
         <div>
-          {fields.map((field, index) => {
+          {fields.map((field) => {
             const FieldComponent = fieldMap[field.type] || fieldMap[FieldType.Text];
+            // @ts-expect-error FieldComponent will take extra properties based on the type
             return <FieldComponent 
-              key={index}
-              label={field.label} 
-              required={field.required} 
+              {...field}
+              key={field.name}
               control={control} 
               name={field.name as Path<T>} rules={{ required: field.required }}
             />

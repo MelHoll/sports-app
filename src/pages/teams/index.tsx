@@ -34,7 +34,7 @@ const TeamsPage = () => {
                     league={teams?.league}/>
         }
         <div className={classes.teamContainer}>
-        {teams && teams.teams.map((team) => <TeamCard team={team}/>)}
+        {teams && teams.teams.map((team) => <TeamCard key={team.teamId} team={team}/>)}
         </div>
         </>
       </Panel>

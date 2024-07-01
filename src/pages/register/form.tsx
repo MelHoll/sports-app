@@ -40,6 +40,19 @@ const fields = [
       required: true, 
       name: "TeamName"
     }, 
+    {
+      type: FieldType.Select,
+      label: "Test",
+      required: true, 
+      name: "Test", 
+      options: [{
+        value: "value", 
+        display: "Display of Value"
+      },{
+        value: "value2", 
+        display: "Display of Value2"
+      } ]
+    }, 
 ];
 
 const RegisterPage = () => {
